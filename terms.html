@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MusicBot Terms of Service - Usage guidelines and legal terms">
+    <meta name="keywords" content="terms of service, terms and conditions, Discord bot terms">
+    <meta property="og:title" content="MusicBot - Terms of Service">
+    <meta property="og:description" content="Read our terms of service and understand how to use MusicBot">
+    <meta name="theme-color" content="#7C3AED">
+    
+    <title>MusicBot - Terms of Service</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Terms Page Specific Styles */
+        .terms-hero {
+            margin-top: 80px;
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(236, 72, 153, 0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .terms-hero h1 {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-md);
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .terms-hero p {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+        }
+
+        .terms-content {
+            padding: var(--space-3xl) 0;
+        }
+
+        .terms-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .terms-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-size-2xl);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--space-lg);
+        }
+
+        .terms-section h3 {
+            color: var(--primary-light);
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .terms-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .terms-section ul, .terms-section ol {
+            color: var(--text-secondary);
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .terms-section li {
+            margin-bottom: var(--space-md);
+            line-height: 1.7;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .warning-box strong {
+            color: var(--danger-color);
+        }
+
+        .highlight-box {
+            background: rgba(124, 58, 237, 0.1);
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary-light);
+        }
+
+        .toc {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .toc h3 {
+            color: var(--primary-light);
+            margin-bottom: var(--space-lg);
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: var(--space-md);
+        }
+
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .toc a:hover {
+            color: var(--primary-light);
+        }
+
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .do-list, .dont-list {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+        }
+
+        .do-list {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success-color);
+        }
+
+        .dont-list {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--danger-color);
+        }
+
+        .do-list h3, .dont-list h3 {
+            margin-top: 0;
+        }
+
+        .do-list h3 {
+            color: var(--success-color);
+        }
+
+        .dont-list h3 {
+            color: var(--danger-color);
+        }
+
+        .do-list ul, .dont-list ul {
+            margin: 0;
+            list-style: none;
+        }
+
+        .do-list li::before {
+            content: '✓ ';
+            color: var(--success-color);
+            font-weight: 700;
+            margin-right: var(--space-sm);
+        }
+
+        .dont-list li::before {
+            content: '✗ ';
+            color: var(--danger-color);
+            font-weight: 700;
+            margin-right: var(--space-sm);
+        }
+
+        .liability-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-lg) 0;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .liability-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-lg);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .liability-table td {
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: var(--font-size-sm);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .terms-hero {
+                margin-top: 70px;
+                padding: 40px 0;
+            }
+
+            .terms-hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .dos-donts {
+                grid-template-columns: 1fr;
+            }
+
+            .liability-table {
+                font-size: var(--font-size-sm);
+            }
+
+            .liability-table th,
+            .liability-table td {
+                padding: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/bot-logo.png" alt="MusicBot Logo" class="logo-img">
+                <span>MusicBot</span>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="commands.html" class="nav-link">Commands</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#faq" class="nav-link">FAQ</a>
+            </div>
+            
+            <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands" 
+               class="btn-invite" target="_blank">
+                Add to Discord
+            </a>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Terms Hero Section -->
+    <section class="terms-hero">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>Last Updated: October 2025 | Effective Date: October 1, 2025</p>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+                    <li><a href="#service-description">2. Service Description</a></li>
+                    <li><a href="#user-conduct">3. User Conduct</a></li>
+                    <li><a href="#prohibited-activities">4. Prohibited Activities</a></li>
+                    <li><a href="#intellectual-property">5. Intellectual Property</a></li>
+                    <li><a href="#limitations">6. Limitations of Liability</a></li>
+                    <li><a href="#indemnification">7. Indemnification</a></li>
+                    <li><a href="#termination">8. Termination</a></li>
+                    <li><a href="#disclaimers">9. Disclaimers</a></li>
+                    <li><a href="#dispute-resolution">10. Dispute Resolution</a></li>
+                    <li><a href="#changes">11. Changes to Terms</a></li>
+                    <li><a href="#contact">12. Contact Information</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="terms-section" id="acceptance">
+                <h2>1. Acceptance of Terms</h2>
+                <p>
+                    By using MusicBot (the "Service"), you agree to be bound by these Terms of Service ("Terms"). 
+                    If you do not agree to these Terms, do not use MusicBot or any of its features.
+                </p>
+                <p>
+                    These Terms constitute a binding legal agreement between you and MusicBot ("Company", "we", "us", "our"). 
+                    By accessing and using the Service, you acknowledge that you have read, understood, and agree to be bound by all provisions herein.
+                </p>
+                <div class="highlight-box">
+                    <strong>📌 Important:</strong> These Terms apply in addition to Discord's Terms of Service. You must comply with Discord's terms while using MusicBot.
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="terms-section" id="service-description">
+                <h2>2. Service Description</h2>
+                <h3>What We Provide</h3>
+                <p>
+                    MusicBot is a Discord bot application that provides music information, discovery features, and analytics. 
+                    Our Service allows users to:
+                </p>
+                <ul>
+                    <li>Search for artist, track, and album information</li>
+                    <li>Access real-time music charts and trending data</li>
+                    <li>Discover music by genre and preferences</li>
+                    <li>View and compare music statistics</li>
+                    <li>Access song lyrics and metadata</li>
+                </ul>
+                <h3>Service Availability</h3>
+                <ul>
+                    <li><strong>Free Service:</strong> All core features are provided free of charge</li>
+                    <li><strong>No Guarantee:</strong> We do not guarantee continuous or uninterrupted access to the Service</li>
+                    <li><strong>Maintenance:</strong> We may perform maintenance or upgrades at any time with or without notice</li>
+                    <li><strong>Changes:</strong> We reserve the right to modify or discontinue features at our discretion</li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="terms-section" id="user-conduct">
+                <h2>3. User Conduct & Responsibilities</h2>
+                <h3>Your Obligations</h3>
+                <p>As a user of MusicBot, you are responsible for:</p>
+                <ul>
+                    <li>Ensuring you are at least 13 years old (or the legal age in your jurisdiction)</li>
+                    <li>Maintaining the confidentiality of your Discord account credentials</li>
+                    <li>Complying with all applicable laws and regulations</li>
+                    <li>Using the Service in accordance with these Terms and Discord's Terms</li>
+                    <li>Not interfering with or disrupting the Service's normal operation</li>
+                </ul>
+                <h3>Account Responsibility</h3>
+                <p>
+                    You are solely responsible for any activity that occurs under your Discord account when using MusicBot. 
+                    If you believe your account has been compromised, notify us immediately.
+                </p>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="terms-section" id="prohibited-activities">
+                <h2>4. Prohibited Activities</h2>
+                <p>You agree NOT to:</p>
+                
+                <div class="dos-donts">
+                    <div class="dont-list">
+                        <h3>❌ Prohibited</h3>
+                        <ul>
+                            <li>Abuse, harass, or threaten other users</li>
+                            <li>Use the bot for spam or flooding commands</li>
+                            <li>Attempt to hack or reverse-engineer the bot</li>
+                            <li>Use automated tools or scripts (except Discord bots)</li>
+                            <li>Share your API tokens or credentials</li>
+                            <li>Use the bot for illegal activities</li>
+                            <li>Violate any intellectual property rights</li>
+                            <li>Attempt to DDoS or overload the service</li>
+                            <li>Access unauthorized systems or data</li>
+                            <li>Create multiple accounts to bypass restrictions</li>
+                        </ul>
+                    </div>
+                    <div class="do-list">
+                        <h3>✓ Allowed</h3>
+                        <ul>
+                            <li>Use all features normally</li>
+                            <li>Share bot information with others</li>
+                            <li>Report bugs and security issues</li>
+                            <li>Provide feedback and suggestions</li>
+                            <li>Customize your preferences</li>
+                            <li>Create server-specific settings</li>
+                            <li>Integrate with Discord workflows</li>
+                            <li>Use data for personal purposes</li>
+                            <li>Contribute to our community</li>
+                            <li>Participate in beta testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Enforcement</h3>
+                <p>
+                    Violation of these prohibitions may result in:
+                </p>
+                <ul>
+                    <li>Immediate account suspension or permanent ban</li>
+                    <li>Removal from all MusicBot services</li>
+                    <li>Legal action if applicable</li>
+                    <li>Cooperation with law enforcement if required</li>
+                </ul>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="terms-section" id="intellectual-property">
+                <h2>5. Intellectual Property Rights</h2>
+                <h3>Our Intellectual Property</h3>
+                <p>
+                    All content, code, features, and functionality of MusicBot are owned by MusicBot or its content providers and are protected by international copyright, trademark, and other intellectual property laws.
+                </p>
+                <ul>
+                    <li><strong>Bot Code:</strong> Licensed under MIT License on GitHub (where applicable)</li>
+                    <li><strong>Website Content:</strong> © 2025 MusicBot. All rights reserved</li>
+                    <li><strong>Music Data:</strong> Sourced from Spotify, Billboard, Last.fm - subject to their terms</li>
+                    <li><strong>Brand:</strong> MusicBot name and logo are trademarks of MusicBot</li>
+                </ul>
+
+                <h3>Your License</h3>
+                <p>
+                    We grant you a limited, non-exclusive, revocable license to use MusicBot for personal, non-commercial purposes. 
+                    You may not:
+                </p>
+                <ul>
+                    <li>Copy, modify, or create derivative works</li>
+                    <li>Redistribute or sell access to MusicBot</li>
+                    <li>Use the bot for commercial purposes without permission</li>
+                    <li>Reverse-engineer or attempt to extract source code</li>
+                </ul>
+
+                <h3>Third-Party Content</h3>
+                <p>
+                    MusicBot integrates data from Spotify, Billboard, Last.fm, and other services. Your use of this data is subject to their terms of service and intellectual property rights.
+                </p>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="terms-section" id="limitations">
+                <h2>6. Limitations of Liability</h2>
+                <h3>Disclaimer</h3>
+                <div class="warning-box">
+                    <strong>⚠️ IMPORTANT:</strong> MUSICBOT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+                </div>
+
+                <h3>What We Don't Guarantee</h3>
+                <p>We make NO warranties regarding:</p>
+                <ul>
+                    <li>Accuracy or completeness of music data</li>
+                    <li>Uninterrupted or error-free service</li>
+                    <li>Fitness for any particular purpose</li>
+                    <li>Non-infringement of third-party rights</li>
+                </ul>
+
+                <h3>Limitation of Damages</h3>
+                <table class="liability-table">
+                    <thead>
+                        <tr>
+                            <th>Type of Claim</th>
+                            <th>Maximum Liability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Any and all claims arising from MusicBot use</td>
+                            <td>$0 (Zero Dollars)</td>
+                        </tr>
+                        <tr>
+                            <td>Direct damages</td>
+                            <td>Not applicable - free service</td>
+                        </tr>
+                        <tr>
+                            <td>Indirect, incidental, or consequential damages</td>
+                            <td>Not applicable</td>
+                        </tr>
+                        <tr>
+                            <td>Lost profits or data</td>
+                            <td>Not applicable</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <strong>📌 Note:</strong> This limitation applies to the maximum extent permitted by law. Some jurisdictions do not allow disclaimer of certain warranties.
+                </div>
+            </div>
+
+            <!-- Section 7 -->
+            <div class="terms-section" id="indemnification">
+                <h2>7. Indemnification</h2>
+                <p>
+                    You agree to indemnify, defend, and hold harmless MusicBot and its officers, directors, employees, and agents from any claims, damages, losses, and expenses arising from:
+                </p>
+                <ul>
+                    <li>Your violation of these Terms</li>
+                    <li>Your use of MusicBot in violation of applicable law</li>
+                    <li>Your infringement of any intellectual property rights</li>
+                    <li>Any harm caused by your account or actions</li>
+                    <li>Your violation of Discord's Terms of Service</li>
+                </ul>
+                <p>
+                    This indemnification applies regardless of whether MusicBot had knowledge of such violations.
+                </p>
+            </div>
+
+            <!-- Section 8 -->
+            <div class="terms-section" id="termination">
+                <h2>8. Termination</h2>
+                <h3>How We May Terminate</h3>
+                <p>We may terminate or suspend your access to MusicBot immediately, without notice, if:</p>
+                <ul>
+                    <li>You violate any provision of these Terms</li>
+                    <li>You engage in prohibited activities</li>
+                    <li>We believe termination is necessary to protect our service or users</li>
+                    <li>Your account shows fraudulent or suspicious activity</li>
+                    <li>You are in violation of Discord's Terms of Service</li>
+                </ul>
+
+                <h3>Effect of Termination</h3>
+                <p>Upon termination:</p>
+                <ul>
+                    <li>Your access to MusicBot is immediately revoked</li>
+                    <li>Any associated data may be permanently deleted</li>
+                    <li>Certain provisions survive termination (indemnification, disclaimers, liability limitations)</li>
+                </ul>
+
+                <h3>How You May Terminate</h3>
+                <p>
+                    You may terminate your use of MusicBot at any time by simply removing the bot from your Discord server or ceasing its use. 
+                    Contact us at support@musicbot.com if you need account deletion.
+                </p>
+            </div>
+
+            <!-- Section 9 -->
+            <div class="terms-section" id="disclaimers">
+                <h2>9. Disclaimers</h2>
+                <h3>No Professional Advice</h3>
+                <p>
+                    MusicBot provides music information and recommendations for entertainment purposes only. 
+                    It should not be considered professional music curating, industry analysis, or investment advice.
+                </p>
+
+                <h3>Third-Party Services</h3>
+                <p>
+                    MusicBot integrates with third-party services (Spotify, Billboard, Last.fm, Discord). We are not responsible for:
+                </p>
+                <ul>
+                    <li>Their availability or reliability</li>
+                    <li>Changes to their terms or policies</li>
+                    <li>Data loss or corruption from their services</li>
+                    <li>Their intellectual property practices</li>
+                </ul>
+
+                <h3>Virus/Malware Disclaimer</h3>
+                <p>
+                    While we strive to keep MusicBot secure, we cannot guarantee the absence of viruses, malware, or other harmful code. 
+                    Use standard security practices when running the bot.
+                </p>
+
+                <h3>External Links</h3>
+                <p>
+                    Our website and content may contain links to third-party websites. We do not endorse, control, or take responsibility for third-party content.
+                </p>
+            </div>
+
+            <!-- Section 10 -->
+            <div class="terms-section" id="dispute-resolution">
+                <h2>10. Dispute Resolution</h2>
+                <h3>Governing Law</h3>
+                <p>
+                    These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions.
+                </p>
+
+                <h3>Dispute Resolution Process</h3>
+                <p>In case of disputes, the following process applies:</p>
+                <ol>
+                    <li><strong>Good Faith Negotiation:</strong> Attempt to resolve the dispute through mutual discussion</li>
+                    <li><strong>Escalation:</strong> If unresolved after 15 days, contact our support team formally</li>
+                    <li><strong>Mediation:</strong> We may use binding or non-binding mediation</li>
+                    <li><strong>Arbitration:</strong> If not resolved, disputes may go to arbitration or court as permitted by law</li>
+                </ol>
+
+                <h3>Limitation Period</h3>
+                <p>
+                    Any legal action or claim arising from your use of MusicBot must be brought within one (1) year of the event or claim arising, 
+                    or such legal action shall be permanently barred.
+                </p>
+
+                <div class="warning-box">
+                    <strong>⚠️ Waiver of Class Action:</strong> Both parties waive the right to participate in class action lawsuits or class-wide arbitrations.
+                </div>
+            </div>
+
+            <!-- Section 11 -->
+            <div class="terms-section" id="changes">
+                <h2>11. Changes to These Terms</h2>
+                <p>
+                    We may modify these Terms at any time. When we make material changes:
+                </p>
+                <ul>
+                    <li>We will update the "Last Updated" date at the top of this page</li>
+                    <li>For significant changes, we will notify users via email or in-bot announcements</li>
+                    <li>Your continued use of MusicBot after changes constitutes acceptance of the new Terms</li>
+                    <li>If you do not agree to changes, discontinue using MusicBot</li>
+                </ul>
+                <p>
+                    We recommend reviewing these Terms periodically for updates.
+                </p>
+            </div>
+
+            <!-- Section 12 -->
+            <div class="terms-section" id="contact">
+                <h2>12. Contact Information</h2>
+                <p>
+                    For questions, concerns, or disputes regarding these Terms of Service, please contact us:
+                </p>
+                <div style="background: var(--bg-tertiary); border: 2px solid var(--primary-color); border-radius: var(--radius-lg); padding: var(--space-2xl); text-align: center; margin-top: var(--space-lg);">
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:legal@musicbot.com">legal@musicbot.com</a><br>
+                        <strong>Discord:</strong> <a href="https://discord.gg/YOUR_SUPPORT_SERVER" target="_blank">Join our support server</a><br>
+                        <strong>Response Time:</strong> We aim to respond within 30 days
+                    </p>
+                </div>
+            </div>
+
+            <!-- Acceptance Summary -->
+            <div class="terms-section" style="background: rgba(124, 58, 237, 0.1); border-color: var(--primary-color);">
+                <h2>✅ Summary of Key Points</h2>
+                <ul>
+                    <li>📌 You agree to follow these Terms when using MusicBot</li>
+                    <li>🚫 Don't engage in prohibited activities (spam, abuse, hacking, etc.)</li>
+                    <li>⚖️ MusicBot is provided "as is" with limited liability</li>
+                    <li>📋 Discord's Terms also apply when using MusicBot</li>
+                    <li>⚡ We can terminate access immediately for violations</li>
+                    <li>📊 We own all MusicBot intellectual property</li>
+                    <li>🔒 Third-party data is subject to their terms</li>
+                    <li>📞 Contact us with questions about these Terms</li>
+                </ul>
+            </div>
+
+            <div class="last-updated">
+                <p>Last Updated: October 2025 | Effective Date: October 1, 2025</p>
+                <p>By using MusicBot, you acknowledge that you have read and agree to these Terms of Service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MusicBot</h3>
+                    <p>The ultimate Discord bot for music discovery and information</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="commands.html">Commands</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="https://discord.gg/YOUR_SUPPORT_SERVER" target="_blank">Support Server</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/your-repo" target="_blank" title="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/your-account" target="_blank" title="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MusicBot. All rights reserved. | Made with ❤️ for music lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

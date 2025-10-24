@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MusicBot Privacy Policy - How we handle and protect your data">
+    <meta name="keywords" content="privacy policy, data protection, Discord bot privacy">
+    <meta property="og:title" content="MusicBot - Privacy Policy">
+    <meta property="og:description" content="Read our comprehensive privacy policy and understand how we protect your data">
+    <meta name="theme-color" content="#7C3AED">
+    
+    <title>MusicBot - Privacy Policy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Privacy Page Specific Styles */
+        .policy-hero {
+            margin-top: 80px;
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(236, 72, 153, 0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .policy-hero h1 {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-md);
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .policy-hero p {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+        }
+
+        .policy-content {
+            padding: var(--space-3xl) 0;
+        }
+
+        .policy-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .policy-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-size-2xl);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--space-lg);
+        }
+
+        .policy-section h3 {
+            color: var(--primary-light);
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .policy-section ul, .policy-section ol {
+            color: var(--text-secondary);
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .policy-section li {
+            margin-bottom: var(--space-md);
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background: rgba(124, 58, 237, 0.1);
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary-light);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-lg) 0;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-lg);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .contact-box {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            text-align: center;
+            margin-top: var(--space-2xl);
+        }
+
+        .contact-box h3 {
+            color: var(--primary-light);
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-box p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .contact-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            color: var(--primary-light);
+        }
+
+        .toc {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .toc h3 {
+            color: var(--primary-light);
+            margin-bottom: var(--space-lg);
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: var(--space-md);
+        }
+
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .toc a:hover {
+            color: var(--primary-light);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: var(--font-size-sm);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .policy-hero {
+                margin-top: 70px;
+                padding: 40px 0;
+            }
+
+            .policy-hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .data-table {
+                font-size: var(--font-size-sm);
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/bot-logo.png" alt="MusicBot Logo" class="logo-img">
+                <span>MusicBot</span>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="commands.html" class="nav-link">Commands</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#faq" class="nav-link">FAQ</a>
+            </div>
+            
+            <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands" 
+               class="btn-invite" target="_blank">
+                Add to Discord
+            </a>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Policy Hero Section -->
+    <section class="policy-hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Last Updated: October 2025 | Effective Date: October 1, 2025</p>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <section class="policy-content">
+        <div class="container">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#information-we-collect">Information We Collect</a></li>
+                    <li><a href="#how-we-use">How We Use Your Information</a></li>
+                    <li><a href="#data-sharing">Data Sharing</a></li>
+                    <li><a href="#data-retention">Data Retention</a></li>
+                    <li><a href="#user-rights">Your Rights</a></li>
+                    <li><a href="#security">Data Security</a></li>
+                    <li><a href="#children">Children's Privacy</a></li>
+                    <li><a href="#changes">Changes to Policy</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Introduction Section -->
+            <div class="policy-section" id="introduction">
+                <h2>🔒 Introduction</h2>
+                <p>
+                    Welcome to MusicBot ("we," "us," "our," or "Company"). MusicBot is committed to protecting your privacy and ensuring you have a positive experience on our Discord bot platform.
+                </p>
+                <p>
+                    This Privacy Policy explains our data practices regarding information we collect, use, and share when you:
+                </p>
+                <ul>
+                    <li>Use the MusicBot Discord bot</li>
+                    <li>Visit our website (musicbot.com)</li>
+                    <li>Interact with our services or support channels</li>
+                    <li>Communicate with our team</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>📌 Important:</strong> This policy applies to MusicBot services only. Discord's privacy policy is separate and governs Discord's platform. Please review Discord's privacy practices at <a href="https://discord.com/privacy" target="_blank">discord.com/privacy</a>.
+                </div>
+            </div>
+
+            <!-- Information We Collect Section -->
+            <div class="policy-section" id="information-we-collect">
+                <h2>📊 Information We Collect</h2>
+                <h3>A. Automatically Collected Information</h3>
+                <p>When you use MusicBot, we automatically collect certain information:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Description</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Discord User ID</strong></td>
+                            <td>Your unique Discord identifier (numeric ID)</td>
+                            <td>Identifying you and your preferences</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Server ID</strong></td>
+                            <td>The Discord server where you use MusicBot</td>
+                            <td>Providing server-specific functionality</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Command Usage</strong></td>
+                            <td>Which commands you execute and timestamps</td>
+                            <td>Service improvement and analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Search Queries</strong></td>
+                            <td>Artist names, track names, genres searched</td>
+                            <td>Personalizing recommendations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Preferences</strong></td>
+                            <td>Your music preferences and listening history</td>
+                            <td>Customizing your experience</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>B. Information You Provide</h3>
+                <ul>
+                    <li><strong>Profile Information:</strong> When you opt-in to share music stats, you voluntarily provide preferences</li>
+                    <li><strong>Support Communications:</strong> Messages sent to our support team via Discord or email</li>
+                    <li><strong>Feedback:</strong> Bug reports, feature requests, and general feedback</li>
+                    <li><strong>Settings:</strong> Custom command prefixes and server configurations</li>
+                </ul>
+
+                <h3>C. Third-Party Data</h3>
+                <p>
+                    We receive music metadata from integrated services including Spotify, Billboard, and Last.fm APIs. 
+                    This data includes artist information, track details, and chart data - not personal user information from these services.
+                </p>
+            </div>
+
+            <!-- How We Use Your Information Section -->
+            <div class="policy-section" id="how-we-use">
+                <h2>🎯 How We Use Your Information</h2>
+                <p>We use the collected information for legitimate purposes:</p>
+                <h3>Primary Uses</h3>
+                <ul>
+                    <li><strong>Service Delivery:</strong> Operating MusicBot and providing music information features</li>
+                    <li><strong>Personalization:</strong> Customizing search results and recommendations based on your preferences</li>
+                    <li><strong>Improvement:</strong> Analyzing usage patterns to enhance features and fix issues</li>
+                    <li><strong>Communication:</strong> Responding to support requests and sending important updates</li>
+                    <li><strong>Analytics:</strong> Understanding user demographics and popular features (aggregated only)</li>
+                    <li><strong>Safety:</strong> Detecting and preventing abuse, fraud, and security issues</li>
+                </ul>
+
+                <h3>Secondary Uses</h3>
+                <ul>
+                    <li><strong>Service Improvements:</strong> A/B testing new features with opt-in user groups</li>
+                    <li><strong>Research:</strong> Conducting music discovery trend analysis (anonymized data)</li>
+                    <li><strong>Marketing:</strong> With explicit consent, we may share updates about new features</li>
+                    <li><strong>Legal Compliance:</strong> Meeting obligations under applicable laws</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>✅ What We Don't Do:</strong> We never sell your personal data, use your data for targeted advertising, or share your music preferences with third parties without consent.
+                </div>
+            </div>
+
+            <!-- Data Sharing Section -->
+            <div class="policy-section" id="data-sharing">
+                <h2>🔄 Data Sharing</h2>
+                <h3>Who We Share Data With</h3>
+                <p>Your information may be shared with:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> Cloud hosting providers (Amazon AWS), API services, and database providers who process data on our behalf under strict confidentiality agreements</li>
+                    <li><strong>Music APIs:</strong> Spotify, Billboard, Last.fm - we share search queries to fetch music data, but they don't receive your personal Discord ID</li>
+                    <li><strong>Law Enforcement:</strong> Only when legally required or to protect safety and rights</li>
+                    <li><strong>Aggregated Analytics:</strong> Third-party analytics services receive only anonymized, aggregated data</li>
+                </ul>
+
+                <h3>Third-Party Services We Use</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Purpose</th>
+                            <th>Data Shared</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Spotify API</strong></td>
+                            <td>Music information</td>
+                            <td>Search queries (artist, track names)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Billboard API</strong></td>
+                            <td>Chart data</td>
+                            <td>Request metadata</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AWS</strong></td>
+                            <td>Data storage & hosting</td>
+                            <td>All user data (encrypted)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Discord API</strong></td>
+                            <td>Bot operations</td>
+                            <td>User and server IDs</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Data You Choose to Share</h3>
+                <p>
+                    If you use the !compare command or enable public music stats, your music preferences are visible to other Discord users 
+                    in your server. You control what information is public through privacy settings.
+                </p>
+            </div>
+
+            <!-- Data Retention Section -->
+            <div class="policy-section" id="data-retention">
+                <h2>⏰ Data Retention</h2>
+                <h3>How Long We Keep Your Data</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Retention Period</th>
+                            <th>Reason for Retention</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>User Preferences</strong></td>
+                            <td>Until account deletion</td>
+                            <td>Service personalization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Command History</strong></td>
+                            <td>90 days</td>
+                            <td>Analytics and improvement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Search Queries</strong></td>
+                            <td>30 days</td>
+                            <td>Performance optimization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Error Logs</strong></td>
+                            <td>7 days</td>
+                            <td>Technical support</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Support Conversations</strong></td>
+                            <td>1 year</td>
+                            <td>Reference and disputes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Deletion Requests</h3>
+                <p>
+                    You can request deletion of your data at any time. Upon deletion request, we will:
+                </p>
+                <ul>
+                    <li>Remove all personal data associated with your Discord account</li>
+                    <li>Delete your music preferences and history</li>
+                    <li>Anonymize any analytics data</li>
+                    <li>Remove you from our systems within 30 days</li>
+                </ul>
+                <p>
+                    <strong>Note:</strong> Some data may be retained for legal or security purposes, but will be anonymized.
+                </p>
+            </div>
+
+            <!-- User Rights Section -->
+            <div class="policy-section" id="user-rights">
+                <h2>👤 Your Rights</h2>
+                <h3>Data Subject Rights (GDPR & CCPA Compliant)</h3>
+                <p>Depending on your location, you have the following rights:</p>
+                <ul>
+                    <li><strong>Right to Access:</strong> You can request a copy of all personal data we hold about you</li>
+                    <li><strong>Right to Correction:</strong> You can request correction of inaccurate data</li>
+                    <li><strong>Right to Deletion:</strong> You can request deletion of your data ("right to be forgotten")</li>
+                    <li><strong>Right to Portability:</strong> You can request your data in a standard, portable format</li>
+                    <li><strong>Right to Withdraw Consent:</strong> You can withdraw consent for data processing anytime</li>
+                    <li><strong>Right to Restrict Processing:</strong> You can limit how we use your data</li>
+                    <li><strong>Right to Object:</strong> You can object to certain types of processing</li>
+                </ul>
+
+                <h3>How to Exercise Your Rights</h3>
+                <p>
+                    To exercise any of these rights, contact us at <strong>privacy@musicbot.com</strong> with:
+                </p>
+                <ul>
+                    <li>Your Discord user ID</li>
+                    <li>A clear description of what you're requesting</li>
+                    <li>Proof of identity (if required)</li>
+                </ul>
+                <p>
+                    We will respond to all requests within <strong>30 days</strong> of receipt.
+                </p>
+            </div>
+
+            <!-- Security Section -->
+            <div class="policy-section" id="security">
+                <h2>🛡️ Data Security</h2>
+                <h3>Security Measures We Implement</h3>
+                <ul>
+                    <li><strong>Encryption:</strong> All data transmitted uses HTTPS/TLS encryption</li>
+                    <li><strong>Database Security:</strong> Data at rest is encrypted using AES-256</li>
+                    <li><strong>Access Control:</strong> Only authorized personnel can access user data</li>
+                    <li><strong>Firewalls:</strong> Multi-layer network protection and DDoS mitigation</li>
+                    <li><strong>Authentication:</strong> Strong authentication for admin access</li>
+                    <li><strong>Regular Audits:</strong> Security audits and penetration testing</li>
+                    <li><strong>Monitoring:</strong> 24/7 security monitoring for threats</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>⚠️ Important:</strong> No security system is 100% secure. While we implement industry-standard protections, 
+                    we cannot guarantee absolute security. Please report any security concerns to security@musicbot.com immediately.
+                </div>
+
+                <h3>Your Responsibilities</h3>
+                <ul>
+                    <li>Keep your Discord account credentials secure</li>
+                    <li>Use a strong, unique password for your Discord account</li>
+                    <li>Enable two-factor authentication on your Discord account</li>
+                    <li>Never share your Discord user ID or tokens with others</li>
+                </ul>
+            </div>
+
+            <!-- Children's Privacy Section -->
+            <div class="policy-section" id="children">
+                <h2>👶 Children's Privacy</h2>
+                <p>
+                    MusicBot is not intended for children under 13 years old. We comply with COPPA (Children's Online Privacy Protection Act) and similar regulations worldwide.
+                </p>
+                <h3>Our Policy on Children's Data</h3>
+                <ul>
+                    <li>We do not knowingly collect personal data from children under 13</li>
+                    <li>If we discover a user is under 13, we delete their data immediately</li>
+                    <li>We do not market to children</li>
+                    <li>Discord's age restrictions (minimum 13 years) apply when using MusicBot</li>
+                </ul>
+                <p>
+                    If you believe a child under 13 has provided us with personal information, please contact us immediately at privacy@musicbot.com.
+                </p>
+            </div>
+
+            <!-- Changes to Policy Section -->
+            <div class="policy-section" id="changes">
+                <h2>📝 Changes to This Privacy Policy</h2>
+                <p>
+                    We may update this Privacy Policy periodically to reflect changes in our practices, technology, legal requirements, 
+                    or other factors. When we make material changes, we will:
+                </p>
+                <ul>
+                    <li>Update the "Last Updated" date at the top of this page</li>
+                    <li>Post the updated policy on our website</li>
+                    <li>Notify users of significant changes via email or in-bot announcements</li>
+                    <li>Request consent if required by law</li>
+                </ul>
+                <p>
+                    Your continued use of MusicBot following notification of changes constitutes acceptance of the updated Privacy Policy.
+                </p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="policy-section" id="contact">
+                <h2>📧 Contact Us</h2>
+                <p>
+                    If you have questions about this Privacy Policy, concerns about our data practices, or want to exercise your data rights, please contact us:
+                </p>
+                <div class="contact-box">
+                    <h3>Privacy Team</h3>
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:privacy@musicbot.com">privacy@musicbot.com</a><br>
+                        <strong>Discord:</strong> Join our <a href="https://discord.gg/YOUR_SUPPORT_SERVER" target="_blank">support server</a><br>
+                        <strong>Response Time:</strong> 30 days maximum
+                    </p>
+                </div>
+
+                <h3>Additional Information</h3>
+                <p>
+                    <strong>Data Protection Officer (DPO):</strong> If you're in the EU, you have the right to contact our Data Protection Officer regarding your data rights.
+                </p>
+                <p>
+                    <strong>Regulatory Authorities:</strong> You have the right to file a complaint with your local data protection authority if you believe we have violated your rights.
+                </p>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="policy-section" style="background: rgba(124, 58, 237, 0.1); border-color: var(--primary-color);">
+                <h2>📌 Privacy at a Glance</h2>
+                <ul>
+                    <li>✅ We collect minimal necessary data</li>
+                    <li>✅ We don't sell your data</li>
+                    <li>✅ We encrypt your information</li>
+                    <li>✅ You control your privacy settings</li>
+                    <li>✅ You can delete your data anytime</li>
+                    <li>✅ We're GDPR and CCPA compliant</li>
+                    <li>✅ We're transparent about our practices</li>
+                    <li>✅ We respond to data requests within 30 days</li>
+                </ul>
+            </div>
+
+            <div class="last-updated">
+                <p>Last Updated: October 2025 | Effective Date: October 1, 2025</p>
+                <p>MusicBot is committed to your privacy and data protection. Thank you for your trust.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MusicBot</h3>
+                    <p>The ultimate Discord bot for music discovery and information</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="commands.html">Commands</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="https://discord.gg/YOUR_SUPPORT_SERVER" target="_blank">Support Server</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/your-repo" target="_blank" title="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/your-account" target="_blank" title="Discord">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MusicBot. All rights reserved. | Made with ❤️ for music lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
