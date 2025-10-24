@@ -22,7 +22,7 @@
         :root {
             --primary-color: #58280e;
             --secondary-color: #fbf5da;
-            --bg-primary: #411602;
+            --bg-primary: #271107;
             --bg-secondary: #5e3d24;
             --text-primary: #F1F5F9;
             --text-secondary: #CBD5E1;
@@ -31,7 +31,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1f3a 100%);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #dfae83 100%);
             color: var(--text-primary);
             min-height: 100vh;
             display: flex;
@@ -50,8 +50,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, #58280e 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, #fbf5da 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -119,10 +119,10 @@
 
         @keyframes pulse-glow {
             0%, 100% {
-                box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+                box-shadow: 0 0 20px #fbf6d8;
             }
             50% {
-                box-shadow: 0 0 40px rgba(124, 58, 237, 0.6);
+                box-shadow: 0 0 40px #eee7cc;
             }
         }
 
@@ -171,7 +171,7 @@
         }
 
         .quirky-message {
-            background: rgba(124, 58, 237, 0.1);
+            background: #58280e;
             border: 2px solid var(--primary-color);
             border-radius: 12px;
             padding: 25px;
