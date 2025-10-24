@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="404 Not Found - The page you're looking for couldn't be found">
     <meta name="theme-color" content="#32B8C6">
     
@@ -42,6 +42,10 @@
             --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
             --color-bg-1: rgba(29, 78, 216, 0.15);
             --color-bg-8: rgba(8, 145, 178, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -201,6 +205,39 @@
             }
         }
 
+        /* Beam animation */
+        .beam {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .beam-line {
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(180deg, transparent, rgba(50, 184, 198, 0.5), transparent);
+            animation: beamShine 3s ease-in-out infinite;
+        }
+
+        .beam-1 {
+            top: 20%;
+            left: 10%;
+        }
+
+        .beam-2 {
+            top: 30%;
+            right: 12%;
+        }
+
+        @keyframes beamShine {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
         .error-code {
             font-family: 'Poppins', sans-serif;
             font-size: 10rem;
@@ -214,6 +251,13 @@
             animation: codeZoom 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
             line-height: 1;
             filter: drop-shadow(0 0 30px rgba(50, 184, 198, 0.2));
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .error-code:hover {
+            filter: drop-shadow(0 0 50px rgba(50, 184, 198, 0.4));
+            transform: scale(1.05);
         }
 
         @keyframes codeZoom {
@@ -233,6 +277,13 @@
             display: inline-block;
             animation: emojiPulse 2.5s ease-in-out infinite;
             filter: drop-shadow(0 0 20px rgba(50, 184, 198, 0.3));
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .emoji-animation:hover {
+            animation-play-state: paused;
+            transform: scale(1.2) rotate(15deg);
         }
 
         @keyframes emojiPulse {
@@ -254,6 +305,28 @@
             color: var(--color-text);
             animation: titleSlide 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
             letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-teal-400));
+            animation: underlineGrow 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
+        }
+
+        @keyframes underlineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
         }
 
         @keyframes titleSlide {
@@ -299,6 +372,14 @@
             backdrop-filter: blur(10px);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 10px 40px rgba(0, 0, 0, 0.3);
             animation: messageIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--color-primary);
+            transform-origin: left center;
+        }
+
+        .quirky-message:hover {
+            border-left-color: var(--color-teal-400);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 15px 50px rgba(50, 184, 198, 0.2);
         }
 
         @keyframes messageIn {
@@ -362,6 +443,24 @@
             background: rgba(255, 255, 255, 0.1);
             transition: left 0.3s ease;
             z-index: -1;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::after {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-primary {
@@ -503,6 +602,20 @@
             display: inline-block;
             font-weight: 500;
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .suggestion-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(50, 184, 198, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .suggestion-btn:hover {
@@ -531,10 +644,22 @@
             font-weight: 500;
             border-bottom: 1px solid transparent;
             transition: all 0.3s ease;
+            position: relative;
         }
 
-        .footer-note a:hover {
-            border-bottom-color: var(--color-primary);
+        .footer-note a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+
+        .footer-note a:hover::after {
+            width: 100%;
         }
 
         @keyframes footerIn {
@@ -546,36 +671,50 @@
             }
         }
 
-        /* Responsive Design */
+        /* Mobile responsiveness improvements */
         @media (max-width: 768px) {
             .error-code {
                 font-size: 6rem;
+                letter-spacing: -1px;
             }
 
             h1 {
                 font-size: 1.8rem;
+                width: 100%;
+            }
+
+            h1::after {
+                bottom: -4px;
+                height: 2px;
             }
 
             .subtitle {
                 font-size: 0.95rem;
+                margin-bottom: 20px;
             }
 
             .emoji-animation {
-                font-size: 3rem;
+                font-size: 3.5rem;
+                margin: 20px 0;
             }
 
             .quirky-message {
                 padding: 18px;
                 font-size: 0.9rem;
+                margin: 20px 0;
+                border-left: 3px solid var(--color-primary);
             }
 
             .button-container {
                 flex-direction: column;
                 gap: 10px;
+                margin-top: 30px;
             }
 
             .btn {
                 width: 100%;
+                padding: 14px 24px;
+                font-size: 0.9rem;
             }
 
             .glow-orb {
@@ -586,9 +725,113 @@
                 display: none;
             }
 
+            .beam {
+                display: none;
+            }
+
             .suggestions {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
+                margin-top: 25px;
+            }
+
+            .suggestion-btn {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+                border-radius: 6px;
+            }
+
+            .search-box {
+                margin-top: 30px;
+                padding: 10px 14px;
+                max-width: 100%;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .search-box input {
+                font-size: 1rem;
+            }
+
+            .search-box button {
+                width: 100%;
+                padding: 10px 12px;
+            }
+
+            .container {
+                padding: 30px 16px;
+            }
+
+            .footer-note {
+                margin-top: 40px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 4.5rem;
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 0.85rem;
+                margin-bottom: 15px;
+            }
+
+            .emoji-animation {
+                font-size: 2.5rem;
+                margin: 15px 0;
+            }
+
+            .quirky-message {
+                padding: 15px;
+                font-size: 0.85rem;
+                margin: 15px 0;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+                border-radius: 6px;
+            }
+
+            .suggestions {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+
+            .suggestion-btn {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 25px 12px;
+                max-width: 100%;
+            }
+
+            .footer-note {
+                margin-top: 30px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn, .suggestion-btn {
+                min-height: 44px;
+                min-width: 44px;
+                padding: 12px 20px;
+            }
+
+            .search-box input {
+                font-size: 16px;
             }
         }
     </style>
@@ -605,12 +848,16 @@
     <div class="particle particle-3"></div>
     <div class="particle particle-4"></div>
 
+    <!-- Beam animations -->
+    <div class="beam beam-1"><div class="beam-line"></div></div>
+    <div class="beam beam-2"><div class="beam-line"></div></div>
+
     <div class="container">
         <!-- Error Code -->
-        <div class="error-code">404</div>
+        <div class="error-code" title="Click to see something fun!">404</div>
 
         <!-- Emoji Animation -->
-        <div class="emoji-animation">🎵</div>
+        <div class="emoji-animation" title="Try hovering or clicking me!">🎵</div>
 
         <!-- Main Heading -->
         <h1>Track Not Found</h1>
@@ -638,8 +885,8 @@
 
         <!-- Search Box -->
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search the site...">
-            <button onclick="searchSite()">Search</button>
+            <input type="text" id="searchInput" placeholder="Search the site..." aria-label="Search">
+            <button onclick="searchSite()" aria-label="Search button">Search</button>
         </div>
 
         <!-- Suggestions -->
@@ -660,7 +907,7 @@
     <script>
         // Search functionality
         function searchSite() {
-            const query = document.getElementById('searchInput').value;
+            const query = document.getElementById('searchInput').value.trim();
             if (query) {
                 window.location.href = `/search?q=${encodeURIComponent(query)}`;
             }
@@ -673,6 +920,61 @@
             }
         });
 
+        // Interactive emoji click animation
+        const emojiElement = document.querySelector('.emoji-animation');
+        emojiElement.addEventListener('click', function() {
+            const randomEmoji = ['🎵', '🎶', '🎸', '🎹', '🎧', '🎼', '💿', '🎺', '🥁'];
+            this.textContent = randomEmoji[Math.floor(Math.random() * randomEmoji.length)];
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 10);
+        });
+
+        // Interactive 404 code click animation
+        const codeElement = document.querySelector('.error-code');
+        codeElement.addEventListener('click', function() {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'codeZoom 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            }, 10);
+        });
+
+        // Add ripple effect on button clicks
+        document.querySelectorAll('.btn, .suggestion-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '10px';
+                ripple.style.height = '10px';
+                ripple.style.background = 'rgba(255,255,255,0.5)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.animation = 'rippleEffect 0.6s ease-out';
+                ripple.style.pointerEvents = 'none';
+                
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rippleEffect {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
         // Random quirky messages on console
         const messages = [
             "🎵 404: This track is in the vault!",
@@ -681,10 +983,36 @@
             "🎹 Looks like this page never made it to the studio!",
             "🎧 Signal lost—this page is off-air!",
             "🎼 This note didn't make the final remix!",
+            "💿 404: The record is scratched, page unavailable!",
         ];
 
         const randomMessage = messages[Math.floor(Math.random() * messages.length)];
         console.log(randomMessage);
+
+        // Mobile-friendly touch feedback
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('touchstart', function() {
+                this.style.opacity = '0.7';
+            });
+            el.addEventListener('touchend', function() {
+                this.style.opacity = '1';
+            });
+        });
+
+        // Parallax effect on mouse move (desktop only)
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', function(e) {
+                const orbs = document.querySelectorAll('.glow-orb');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                orbs.forEach((orb, index) => {
+                    const offsetX = (x - 0.5) * 20 * (index + 1);
+                    const offsetY = (y - 0.5) * 20 * (index + 1);
+                    orb.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+                });
+            });
+        }
     </script>
 </body>
 </html>
