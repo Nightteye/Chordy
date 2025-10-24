@@ -1,5 +1,5 @@
 // ============================================================================
-// MUSICBOT WEBSITE - MAIN JAVASCRIPT FILE
+// Chordy WEBSITE - MAIN JAVASCRIPT FILE
 // ============================================================================
 
 // ============================================================================
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.colorScheme = theme;
 
     // Log initialization
-    console.log('MusicBot website loaded successfully');
+    console.log('Chordy website loaded successfully');
 });
 
 // ============================================================================
@@ -421,14 +421,14 @@ if (footerYear) {
 // ============================================================================
 
 console.log(
-    '%c🎵 Welcome to MusicBot!',
+    '%c🎵 Welcome to Chordy!',
     'color: #7C3AED; font-size: 24px; font-weight: bold;'
 );
 console.log(
-    '%cAdd MusicBot to your Discord server for amazing music features!',
+    '%cAdd Chordy to your Discord server for amazing music features!',
     'color: #A78BFA; font-size: 14px;'
 );
 console.log(
-    '%cVisit: https://your-musicbot.com for more information',
+    '%cVisit: https://your-Chordy.com for more information',
     'color: #CBD5E1; font-size: 12px;'
 );
