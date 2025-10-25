@@ -1,5 +1,5 @@
 // ============================================================================
-// Chordy WEBSITE - MAIN JAVASCRIPT FILE (COMPLETE VERSION)
+// Chordy WEBSITE - MAIN JAVASCRIPT FILE
 // ============================================================================
 
 // ============================================================================
@@ -14,60 +14,22 @@ const faqHeaders = document.querySelectorAll('.faq-header');
 const scrollToTopBtn = document.getElementById('scroll-to-top');
 
 // ============================================================================
-// 2. MOBILE MENU FUNCTIONALITY (ENHANCED)
+// 2. HAMBURGER MENU FUNCTIONALITY
 // ============================================================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinksContainer = document.querySelector('.nav-links');
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
 
-    // Hamburger menu toggle
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-
-    // New menu toggle system
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navLinksContainer.classList.toggle('active');
-            menuToggle.textContent = navLinksContainer.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // Close menu when link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                navLinksContainer.classList.remove('active');
-                menuToggle.textContent = '☰';
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('nav')) {
-                navLinksContainer.classList.remove('active');
-                menuToggle.textContent = '☰';
-            }
-        });
-
-        // Close menu on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navLinksContainer.classList.contains('active')) {
-                navLinksContainer.classList.remove('active');
-                menuToggle.textContent = '☰';
-            }
-        });
-    }
-});
+    });
+}
 
 // ============================================================================
 // 3. NAVBAR SCROLL EFFECT
@@ -81,16 +43,12 @@ window.addEventListener('scroll', () => {
 
     // Add background blur to navbar on scroll
     if (scrollTop > scrollThreshold) {
-        if (navbar) {
-            navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
-            navbar.style.backdropFilter = 'blur(15px)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-        }
+        navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+        navbar.style.backdropFilter = 'blur(15px)';
+        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
     } else {
-        if (navbar) {
-            navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.8)';
-            navbar.style.boxShadow = 'none';
-        }
+        navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.8)';
+        navbar.style.boxShadow = 'none';
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
@@ -119,38 +77,7 @@ function setActiveNavLink() {
 window.addEventListener('scroll', setActiveNavLink);
 
 // ============================================================================
-// 5. SMOOTH SCROLL BEHAVIOR (ENHANCED)
-// ============================================================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // Skip if it's just "#"
-        if (href === '#') return;
-        
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-            history.pushState(null, null, href);
-        }
-    });
-});
-
-// Additional smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
-// ============================================================================
-// 6. FAQ ACCORDION FUNCTIONALITY
+// 5. FAQ ACCORDION FUNCTIONALITY
 // ============================================================================
 
 if (faqHeaders.length > 0) {
@@ -170,6 +97,26 @@ if (faqHeaders.length > 0) {
         });
     });
 }
+
+// ============================================================================
+// 6. SMOOTH SCROLL BEHAVIOR
+// ============================================================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            const offsetTop = element.offsetTop - 100;
+            
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
 // ============================================================================
 // 7. SCROLL TO TOP BUTTON
@@ -193,7 +140,7 @@ if (scrollToTopBtn) {
 }
 
 // ============================================================================
-// 8. INTERSECTION OBSERVER FOR ANIMATIONS (ENHANCED)
+// 8. INTERSECTION OBSERVER FOR ANIMATIONS
 // ============================================================================
 
 const observerOptions = {
@@ -201,24 +148,14 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Add fade-in animation class
-            entry.target.classList.add('fade-in-visible');
-            
-            // For older cards, set opacity and transform
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
-
-// Observe fade-in elements
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-});
 
 // Observe all cards
 document.querySelectorAll('.feature-card, .stat-card, .step, .tip-card').forEach(card => {
@@ -229,51 +166,7 @@ document.querySelectorAll('.feature-card, .stat-card, .step, .tip-card').forEach
 });
 
 // ============================================================================
-// 9. FORM VALIDATION (ENHANCED)
-// ============================================================================
-
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        const inputs = this.querySelectorAll('input[required], textarea[required]');
-        let isValid = true;
-
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                input.style.borderColor = '#ff6b6b';
-                isValid = false;
-            } else {
-                input.style.borderColor = '#32B8C6';
-            }
-        });
-
-        if (!isValid) {
-            e.preventDefault();
-        }
-    });
-
-    // Real-time validation
-    form.querySelectorAll('input, textarea').forEach(input => {
-        input.addEventListener('blur', function() {
-            if (this.hasAttribute('required') && !this.value.trim()) {
-                this.style.borderColor = '#ff6b6b';
-            } else {
-                this.style.borderColor = '';
-            }
-        });
-
-        input.addEventListener('input', function() {
-            if (this.classList.contains('error')) {
-                if (this.value.trim()) {
-                    this.style.borderColor = '';
-                    this.classList.remove('error');
-                }
-            }
-        });
-    });
-});
-
-// ============================================================================
-// 10. STATISTICS COUNTER ANIMATION
+// 9. STATISTICS COUNTER ANIMATION
 // ============================================================================
 
 let countStarted = false;
@@ -323,7 +216,7 @@ if (document.querySelector('.stats')) {
 }
 
 // ============================================================================
-// 11. COPY TO CLIPBOARD FUNCTIONALITY
+// 10. COPY TO CLIPBOARD FUNCTIONALITY
 // ============================================================================
 
 function copyToClipboard(text) {
@@ -350,7 +243,7 @@ function fallbackCopy(text) {
 }
 
 // ============================================================================
-// 12. NOTIFICATION SYSTEM
+// 11. NOTIFICATION SYSTEM
 // ============================================================================
 
 function showNotification(message, type = 'success', duration = 3000) {
@@ -379,7 +272,7 @@ function showNotification(message, type = 'success', duration = 3000) {
 }
 
 // ============================================================================
-// 13. KEYBOARD SHORTCUTS
+// 12. KEYBOARD SHORTCUTS
 // ============================================================================
 
 document.addEventListener('keydown', (e) => {
@@ -402,17 +295,10 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============================================================================
-// 14. LOADING ANIMATION
+// 13. PERFORMANCE OPTIMIZATION
 // ============================================================================
 
-window.addEventListener('beforeunload', function() {
-    document.body.style.opacity = '0.5';
-});
-
-// ============================================================================
-// 15. LAZY LOADING IMAGES
-// ============================================================================
-
+// Lazy load images
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -431,7 +317,7 @@ if ('IntersectionObserver' in window) {
 }
 
 // ============================================================================
-// 16. ERROR HANDLING & LOGGING
+// 14. ERROR HANDLING & LOGGING
 // ============================================================================
 
 window.addEventListener('error', (event) => {
@@ -443,7 +329,7 @@ window.addEventListener('unhandledrejection', (event) => {
 });
 
 // ============================================================================
-// 17. LOCAL STORAGE UTILITIES
+// 15. LOCAL STORAGE UTILITIES
 // ============================================================================
 
 const StorageUtil = {
@@ -473,7 +359,7 @@ const StorageUtil = {
 };
 
 // ============================================================================
-// 18. PAGE LOAD OPTIMIZATION
+// 16. PAGE LOAD OPTIMIZATION
 // ============================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -491,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================================================
-// 19. UTILITY FUNCTIONS
+// 17. UTILITY FUNCTIONS
 // ============================================================================
 
 // Debounce function for performance
@@ -521,7 +407,7 @@ function formatNumber(num) {
 }
 
 // ============================================================================
-// 20. FOOTER CURRENT YEAR
+// 18. FOOTER CURRENT YEAR
 // ============================================================================
 
 const footerYear = document.querySelector('.footer-bottom p');
@@ -531,73 +417,7 @@ if (footerYear) {
 }
 
 // ============================================================================
-// 21. ACCESSIBILITY ENHANCEMENTS
-// ============================================================================
-
-// Keyboard navigation for cards
-document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            this.click();
-        }
-    });
-});
-
-// Announce page changes
-document.addEventListener('click', function(e) {
-    if (e.target.matches('a[href^="http"]')) {
-        e.target.setAttribute('rel', 'noopener noreferrer');
-    }
-});
-
-// ============================================================================
-// 22. RIPPLE EFFECT ON BUTTONS
-// ============================================================================
-
-function createRipple(element, x, y) {
-    const ripple = document.createElement('span');
-    ripple.style.position = 'absolute';
-    ripple.style.width = '10px';
-    ripple.style.height = '10px';
-    ripple.style.background = 'rgba(255, 255, 255, 0.5)';
-    ripple.style.borderRadius = '50%';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    ripple.style.pointerEvents = 'none';
-    ripple.style.animation = 'rippleEffect 0.6s ease-out';
-
-    if (getComputedStyle(element).position === 'static') {
-        element.style.position = 'relative';
-    }
-
-    element.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 600);
-}
-
-document.querySelectorAll('button, .btn').forEach(element => {
-    element.addEventListener('click', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        createRipple(this, x, y);
-    });
-});
-
-// ============================================================================
-// 23. PERFORMANCE MONITORING
-// ============================================================================
-
-if (window.performance && window.performance.timing) {
-    window.addEventListener('load', function() {
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`Page Load Time: ${pageLoadTime}ms`);
-    });
-}
-
-// ============================================================================
-// 24. CONSOLE GREETING
+// 19. CONSOLE GREETING
 // ============================================================================
 
 console.log(
@@ -609,10 +429,6 @@ console.log(
     'color: #A78BFA; font-size: 14px;'
 );
 console.log(
-    '%cVisit: https://your-chordy.com for more information',
+    '%cVisit: https://your-Chordy.com for more information',
     'color: #CBD5E1; font-size: 12px;'
 );
-
-// ============================================================================
-// END OF JAVASCRIPT
-// ============================================================================
