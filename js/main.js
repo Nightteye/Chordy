@@ -432,3 +432,23 @@ console.log(
     '%cVisit: https://your-Chordy.com for more information',
     'color: #CBD5E1; font-size: 12px;'
 );
+
+// ============================================================================
+// 20. COMMAND SEARCH FUNCTIONALITY
+// ============================================================================ 
+document.addEventListener('DOMContentLoaded', () => {
+    const searchBox = document.querySelector('.command-search');
+    if (searchBox) {
+        searchBox.addEventListener('input', function() {
+            const value = this.value.toLowerCase();
+            document.querySelectorAll('.command-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(value)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
+});
