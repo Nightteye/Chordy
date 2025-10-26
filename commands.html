@@ -11,30 +11,126 @@
     
     <title>Chordy - Commands Documentation</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <style>
-        /* Commands Page Specific Styles */
+        /* OVERRIDE ALL STYLES - CRITICAL FIX */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #111827;
+            color: #F5F5F5;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* HEADER NAVIGATION - FIXED */
+        header {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(119, 124, 124, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #32B8C6, #4BC9D8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #F5F5F5;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #F5F5F5;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: block;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: #32B8C6;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            min-height: calc(100vh - 200px);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* HERO SECTION */
         .commands-hero {
             margin-top: 60px;
             padding: 60px 20px;
             background: linear-gradient(135deg, rgba(50, 184, 198, 0.1), rgba(75, 201, 216, 0.1));
-            border-bottom: 1px solid var(--color-border);
+            border-bottom: 1px solid rgba(119, 124, 124, 0.2);
         }
 
         .commands-hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
-            color: var(--color-text);
+            color: #F5F5F5;
+            font-weight: 800;
         }
 
         .commands-hero p {
             text-align: center;
-            color: var(--color-text-secondary);
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(167, 169, 169, 0.7);
+            font-size: 1.1rem;
             margin-bottom: 40px;
         }
 
@@ -47,54 +143,22 @@
         .command-search {
             width: 100%;
             padding: 12px 16px;
-            background: var(--color-surface);
-            border: 2px solid var(--color-border);
+            background: #1f2937;
+            border: 2px solid rgba(119, 124, 124, 0.2);
             border-radius: 8px;
-            color: var(--color-text);
+            color: #F5F5F5;
             font-size: 16px;
-            transition: all 0.3s ease;
             font-family: inherit;
+            transition: all 0.3s ease;
         }
 
         .command-search:focus {
             outline: none;
-            border-color: var(--color-primary);
+            border-color: #32B8C6;
             box-shadow: 0 0 0 3px rgba(50, 184, 198, 0.2);
         }
 
-        .filter-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin: 40px 0;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            background: var(--color-surface);
-            border: 2px solid var(--color-border);
-            border-radius: 8px;
-            color: var(--color-text);
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-family: inherit;
-            font-size: 14px;
-            min-height: 44px;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--color-primary);
-            color: var(--color-primary);
-        }
-
-        .filter-btn.active {
-            background: var(--color-primary);
-            border-color: var(--color-primary);
-            color: white;
-        }
-
+        /* COMMANDS SECTION */
         .commands-section {
             padding: 60px 20px;
             max-width: 1200px;
@@ -102,11 +166,13 @@
         }
 
         .category-title {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: 2rem;
             margin: 40px 0 30px;
-            color: var(--color-text);
+            color: #F5F5F5;
+            font-weight: 700;
         }
 
+        /* COMMANDS GRID - CRITICAL */
         .commands-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -115,8 +181,8 @@
         }
 
         .command-card {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
+            background: #1f2937;
+            border: 1px solid rgba(119, 124, 124, 0.2);
             border-radius: 12px;
             padding: 24px;
             transition: all 0.3s ease;
@@ -124,7 +190,7 @@
         }
 
         .command-card:hover {
-            border-color: var(--color-primary);
+            border-color: #32B8C6;
             box-shadow: 0 8px 24px rgba(50, 184, 198, 0.1);
             transform: translateY(-4px);
         }
@@ -132,20 +198,21 @@
         .command-header {
             display: flex;
             justify-content: space-between;
-            align-items: start;
+            align-items: flex-start;
             margin-bottom: 12px;
+            gap: 12px;
         }
 
         .command-header h3 {
             font-size: 1.3rem;
-            color: var(--color-primary);
+            color: #32B8C6;
             margin: 0;
             font-family: 'Courier New', monospace;
         }
 
         .command-badge {
             background: rgba(50, 184, 198, 0.15);
-            color: var(--color-primary);
+            color: #32B8C6;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
@@ -154,7 +221,7 @@
         }
 
         .command-description {
-            color: var(--color-text-secondary);
+            color: rgba(167, 169, 169, 0.7);
             margin: 12px 0;
             font-size: 0.95rem;
         }
@@ -170,7 +237,7 @@
         .detail-group h4 {
             font-size: 0.9rem;
             font-weight: 700;
-            color: var(--color-text);
+            color: #F5F5F5;
             margin: 0 0 8px 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -178,7 +245,7 @@
 
         .code-block {
             background: rgba(50, 184, 198, 0.1);
-            color: var(--color-primary);
+            color: #32B8C6;
             padding: 8px 12px;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
@@ -197,7 +264,7 @@
         .info-list li {
             padding: 4px 0 4px 20px;
             position: relative;
-            color: var(--color-text-secondary);
+            color: rgba(167, 169, 169, 0.7);
             font-size: 0.9rem;
         }
 
@@ -205,48 +272,117 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: var(--color-primary);
+            color: #32B8C6;
             font-weight: bold;
         }
 
-        .permission-badge {
-            display: inline-block;
-            background: rgba(50, 184, 198, 0.2);
-            color: var(--color-primary);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-
-        .no-commands {
-            text-align: center;
+        /* FOOTER */
+        footer {
+            background: rgba(31, 41, 55, 0.8);
+            border-top: 1px solid rgba(119, 124, 124, 0.2);
             padding: 40px 20px;
-            color: var(--color-text-secondary);
+            margin-top: auto;
         }
 
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 12px;
+            color: #F5F5F5;
+        }
+
+        .footer-section a {
+            display: block;
+            margin-bottom: 8px;
+            color: #32B8C6;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #4BC9D8;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(119, 124, 124, 0.2);
+            color: rgba(167, 169, 169, 0.7);
+        }
+
+        /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
             .commands-grid {
                 grid-template-columns: 1fr;
             }
 
-            .filter-buttons {
-                gap: 8px;
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(17, 24, 39, 0.98);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                border-bottom: 1px solid rgba(119, 124, 124, 0.2);
             }
 
-            .filter-btn {
-                font-size: 13px;
-                padding: 8px 16px;
+            .nav-links.active {
+                max-height: 400px;
+                padding: 1rem 0;
             }
+
+            .nav-links a {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .commands-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .commands-hero p {
+                font-size: 0.95rem;
+            }
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #32B8C6;
+            color: #111827;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 4px;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header with Navigation -->
     <header role="banner">
         <nav role="navigation" aria-label="Main">
             <div class="logo">🎵 Chordy</div>
@@ -261,9 +397,7 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main id="main-content" role="main">
-        <!-- Hero Section -->
         <section class="commands-hero" aria-label="Commands page header">
             <div class="container">
                 <h1>🎶 All Available Commands</h1>
@@ -275,32 +409,27 @@
             </div>
         </section>
 
-        <!-- Commands Section -->
         <section class="commands-section" aria-label="Music commands">
             <div class="container">
                 <h2 class="category-title">🎵 Music Commands</h2>
                 
                 <div class="commands-grid">
-                    <!-- Command: /addartist -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/addartist</h3>
                             <span class="command-badge">Music</span>
                         </div>
                         <p class="command-description">Add an artist to your favorites collection</p>
-                        
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/addartist &lt;artist_name&gt;</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/addartist Taylor Swift</code>
                                 <code class="code-block">/addartist The Weeknd</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
@@ -313,26 +442,22 @@
                         </div>
                     </div>
 
-                    <!-- Command: /artistinfo -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/artistinfo</h3>
                             <span class="command-badge">Music Info</span>
                         </div>
                         <p class="command-description">Get detailed information about an artist</p>
-                        
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/artistinfo &lt;artist_name&gt;</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/artistinfo Ed Sheeran</code>
                                 <code class="code-block">/artistinfo Billie Eilish</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
@@ -346,123 +471,106 @@
                         </div>
                     </div>
 
-                    <!-- Command: /ask-music -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/ask-music</h3>
                             <span class="command-badge">AI Music</span>
                         </div>
-                        <p class="command-description">Ask AI questions about music using natural language</p>
-                        
+                        <p class="command-description">Ask AI questions about music</p>
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/ask-music &lt;your_question&gt;</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
-                                <code class="code-block">/ask-music What are the best rock albums?</code>
-                                <code class="code-block">/ask-music Who is the most streamed artist?</code>
+                                <code class="code-block">/ask-music What are best rock albums?</code>
+                                <code class="code-block">/ask-music Who is most streamed artist?</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
                                     <li>AI-powered response</li>
-                                    <li>Relevant music recommendations</li>
-                                    <li>Artist/album suggestions</li>
+                                    <li>Music recommendations</li>
+                                    <li>Artist suggestions</li>
                                     <li>Music facts and trivia</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: /compare-artists -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/compare-artists</h3>
                             <span class="command-badge">Analysis</span>
                         </div>
                         <p class="command-description">Compare two artists side by side</p>
-                        
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/compare-artists &lt;artist_1&gt; &lt;artist_2&gt;</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/compare-artists Drake Kendrick Lamar</code>
                                 <code class="code-block">/compare-artists Adele Beyoncé</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
                                     <li>Genre comparison</li>
-                                    <li>Follower count comparison</li>
+                                    <li>Follower comparison</li>
                                     <li>Top tracks comparison</li>
                                     <li>Popularity metrics</li>
-                                    <li>Similarities & differences</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: /favorites -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/favorites</h3>
                             <span class="command-badge">Profile</span>
                         </div>
-                        <p class="command-description">View your saved favorite artists and tracks</p>
-                        
+                        <p class="command-description">View saved favorites</p>
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/favorites</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/favorites</code>
                                 <code class="code-block">/favorites artists</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Your favorite artists list</li>
-                                    <li>Your favorite tracks list</li>
-                                    <li>Save date information</li>
+                                    <li>Favorite artists list</li>
+                                    <li>Favorite tracks list</li>
+                                    <li>Save date info</li>
                                     <li>Remove option</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: /genre -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/genre</h3>
                             <span class="command-badge">Search</span>
                         </div>
                         <p class="command-description">Explore music by genre</p>
-                        
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/genre &lt;genre_name&gt;</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/genre rock</code>
                                 <code class="code-block">/genre hip-hop</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
@@ -475,126 +583,110 @@
                         </div>
                     </div>
 
-                    <!-- Command: /guitarist-ranking -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/guitarist-ranking</h3>
                             <span class="command-badge">Ranking</span>
                         </div>
                         <p class="command-description">View top ranked guitarists</p>
-                        
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/guitarist-ranking</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/guitarist-ranking</code>
                                 <code class="code-block">/guitarist-ranking top 10</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
                                     <li>Ranked guitarists list</li>
                                     <li>Rankings by era</li>
-                                    <li>Genre-wise rankings</li>
-                                    <li>Details for each guitarist</li>
+                                    <li>Genre rankings</li>
+                                    <li>Guitarist details</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: /history -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/history</h3>
                             <span class="command-badge">Profile</span>
                         </div>
-                        <p class="command-description">View your recent command history</p>
-                        
+                        <p class="command-description">View command history</p>
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/history</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/history</code>
                                 <code class="code-block">/history last 5</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Recent commands used</li>
-                                    <li>Timestamp information</li>
-                                    <li>Search results history</li>
-                                    <li>Clear history option</li>
+                                    <li>Recent commands</li>
+                                    <li>Timestamps</li>
+                                    <li>Search history</li>
+                                    <li>Clear history</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: /new-releases -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/new-releases</h3>
                             <span class="command-badge">Discover</span>
                         </div>
-                        <p class="command-description">Check the latest music releases</p>
-                        
+                        <p class="command-description">Latest music releases</p>
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/new-releases</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/new-releases</code>
                                 <code class="code-block">/new-releases this week</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Latest album releases</li>
+                                    <li>Latest albums</li>
                                     <li>New singles</li>
                                     <li>Release dates</li>
-                                    <li>Artist information</li>
+                                    <li>Artist info</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: /profile -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/profile</h3>
                             <span class="command-badge">Profile</span>
                         </div>
-                        <p class="command-description">View your music profile and statistics</p>
-                        
+                        <p class="command-description">Your profile and stats</p>
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/profile</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/profile</code>
                                 <code class="code-block">/profile @username</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Profile statistics</li>
+                                    <li>Profile stats</li>
                                     <li>Favorite artists</li>
                                     <li>Top tracks</li>
                                     <li>Listening history</li>
@@ -603,63 +695,55 @@
                         </div>
                     </div>
 
-                    <!-- Command: /recommend-music -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/recommend-music</h3>
                             <span class="command-badge">Discover</span>
                         </div>
-                        <p class="command-description">Get personalized music recommendations</p>
-                        
+                        <p class="command-description">Music recommendations</p>
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/recommend-music [preference]</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/recommend-music</code>
                                 <code class="code-block">/recommend-music rock</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Personalized recommendations</li>
+                                    <li>Recommendations</li>
                                     <li>Artist suggestions</li>
                                     <li>Track recommendations</li>
-                                    <li>Why recommended info</li>
+                                    <li>Why recommended</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: /topsongs -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/topsongs</h3>
                             <span class="command-badge">Discover</span>
                         </div>
-                        <p class="command-description">View top songs globally or by artist</p>
-                        
+                        <p class="command-description">Top songs globally or by artist</p>
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/topsongs [artist_name]</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/topsongs</code>
                                 <code class="code-block">/topsongs Justin Bieber</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
                                     <li>Top songs ranking</li>
-                                    <li>Play count statistics</li>
+                                    <li>Play count stats</li>
                                     <li>Release dates</li>
                                     <li>Artist details</li>
                                 </ul>
@@ -667,32 +751,28 @@
                         </div>
                     </div>
 
-                    <!-- Command: /trending artist -->
                     <div class="command-card">
                         <div class="command-header">
                             <h3>/trending artist</h3>
                             <span class="command-badge">Trending</span>
                         </div>
-                        <p class="command-description">Discover trending artists right now</p>
-                        
+                        <p class="command-description">Trending artists right now</p>
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
                                 <code class="code-block">/trending artist</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Examples</h4>
                                 <code class="code-block">/trending artist</code>
                                 <code class="code-block">/trending artist this month</code>
                             </div>
-                            
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Trending artists list</li>
-                                    <li>Current popularity rank</li>
-                                    <li>Growth statistics</li>
+                                    <li>Trending artists</li>
+                                    <li>Popularity rank</li>
+                                    <li>Growth stats</li>
                                     <li>Recent hits</li>
                                 </ul>
                             </div>
@@ -703,13 +783,12 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Chordy</h3>
-                    <p>Your ultimate Discord music companion for discovering, sharing, and enjoying music.</p>
+                    <p>Your ultimate Discord music companion for discovering and enjoying music.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -729,7 +808,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>
