@@ -7,35 +7,35 @@
     <meta name="keywords" content="Discord bot commands, music bot, commands list, bot documentation">
     <meta property="og:title" content="Chordy - All Commands">
     <meta property="og:description" content="Complete documentation of all available Chordy commands with examples and usage">
-    <meta name="theme-color" content="#7C3AED">
+    <meta name="theme-color" content="#32B8C6">
     
     <title>Chordy - Commands Documentation</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
     <style>
         /* Commands Page Specific Styles */
         .commands-hero {
-            margin-top: 80px;
-            padding: 60px 0;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(236, 72, 153, 0.1));
-            border-bottom: 1px solid var(--border-color);
+            margin-top: 60px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(50, 184, 198, 0.1), rgba(75, 201, 216, 0.1));
+            border-bottom: 1px solid var(--color-border);
         }
 
         .commands-hero h1 {
-            font-size: var(--font-size-4xl);
-            margin-bottom: var(--space-md);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
             text-align: center;
+            color: var(--color-text);
         }
 
         .commands-hero p {
             text-align: center;
-            color: var(--text-secondary);
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--space-2xl);
+            color: var(--color-text-secondary);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 40px;
         }
 
         .search-container {
@@ -46,164 +46,146 @@
 
         .command-search {
             width: 100%;
-            padding: var(--space-md) var(--space-lg);
-            padding-left: var(--space-lg);
-            background: var(--bg-secondary);
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            color: var(--text-primary);
-            font-size: var(--font-size-base);
-            transition: all var(--transition-base);
-            font-family: var(--font-primary);
+            padding: 12px 16px;
+            background: var(--color-surface);
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: inherit;
         }
 
         .command-search:focus {
             outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
-        }
-
-        .search-container svg {
-            position: absolute;
-            right: var(--space-lg);
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-tertiary);
-            pointer-events: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(50, 184, 198, 0.2);
         }
 
         .filter-buttons {
             display: flex;
-            gap: var(--space-md);
+            gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: var(--space-3xl);
+            margin: 40px 0;
             justify-content: center;
         }
 
         .filter-btn {
-            padding: var(--space-md) var(--space-lg);
-            background: var(--bg-secondary);
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            color: var(--text-secondary);
+            padding: 10px 20px;
+            background: var(--color-surface);
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text);
             cursor: pointer;
             font-weight: 600;
-            transition: all var(--transition-base);
-            font-family: var(--font-primary);
-            font-size: var(--font-size-base);
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 14px;
+            min-height: 44px;
         }
 
         .filter-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-light);
+            border-color: var(--color-primary);
+            color: var(--color-primary);
         }
 
         .filter-btn.active {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
+            background: var(--color-primary);
+            border-color: var(--color-primary);
             color: white;
         }
 
         .commands-section {
-            padding: var(--space-3xl) 0;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .category-title {
-            font-size: var(--font-size-2xl);
-            margin: var(--space-3xl) 0 var(--space-2xl);
-            color: var(--text-primary);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin: 40px 0 30px;
+            color: var(--color-text);
         }
 
         .commands-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: var(--space-2xl);
-            margin-bottom: var(--space-3xl);
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
         }
 
         .command-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-xl);
-            padding: var(--space-2xl);
-            transition: all var(--transition-base);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .command-card:hover {
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
-            transform: translateY(-5px);
+            border-color: var(--color-primary);
+            box-shadow: 0 8px 24px rgba(50, 184, 198, 0.1);
+            transform: translateY(-4px);
         }
 
         .command-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-lg);
-            border-bottom: 2px solid var(--border-color);
+            align-items: start;
+            margin-bottom: 12px;
         }
 
         .command-header h3 {
+            font-size: 1.3rem;
+            color: var(--color-primary);
             margin: 0;
-            font-size: var(--font-size-xl);
             font-family: 'Courier New', monospace;
-            color: var(--primary-color);
         }
 
         .command-badge {
-            display: inline-block;
-            padding: var(--space-xs) var(--space-md);
-            background: rgba(124, 58, 237, 0.2);
-            border-radius: var(--radius-full);
-            font-size: var(--font-size-sm);
-            color: var(--primary-light);
+            background: rgba(50, 184, 198, 0.15);
+            color: var(--color-primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .command-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-lg);
-            margin: 0 0 var(--space-lg);
+            color: var(--color-text-secondary);
+            margin: 12px 0;
+            font-size: 0.95rem;
         }
 
         .command-details {
-            display: none;
-        }
-
-        .command-card.expanded .command-details {
-            display: block;
+            margin-top: 16px;
         }
 
         .detail-group {
-            margin-bottom: var(--space-lg);
+            margin-bottom: 16px;
         }
 
         .detail-group h4 {
-            margin: 0 0 var(--space-md);
-            color: var(--primary-light);
-            font-size: var(--font-size-sm);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin: 0 0 8px 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .code-block {
-            display: block;
-            background: rgba(0, 0, 0, 0.3);
-            border-left: 3px solid var(--primary-color);
-            padding: var(--space-md);
-            border-radius: var(--radius-md);
+            background: rgba(50, 184, 198, 0.1);
+            color: var(--color-primary);
+            padding: 8px 12px;
+            border-radius: 4px;
             font-family: 'Courier New', monospace;
-            color: var(--primary-light);
-            overflow-x: auto;
-            margin-bottom: var(--space-sm);
-            cursor: copy;
-            transition: background var(--transition-fast);
-        }
-
-        .code-block:hover {
-            background: rgba(124, 58, 237, 0.2);
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+            word-break: break-all;
         }
 
         .info-list {
@@ -213,878 +195,541 @@
         }
 
         .info-list li {
-            padding: var(--space-sm) 0;
-            color: var(--text-secondary);
-            padding-left: var(--space-lg);
+            padding: 4px 0 4px 20px;
             position: relative;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
         }
 
-        .info-list li::before {
-            content: '→';
+        .info-list li:before {
+            content: "✓";
             position: absolute;
             left: 0;
-            color: var(--primary-color);
+            color: var(--color-primary);
+            font-weight: bold;
         }
 
         .permission-badge {
             display: inline-block;
-            padding: var(--space-xs) var(--space-md);
-            background: rgba(34, 197, 94, 0.2);
-            border-radius: var(--radius-full);
-            font-size: var(--font-size-sm);
-            color: var(--success-color);
-            margin-right: var(--space-md);
-            margin-bottom: var(--space-sm);
+            background: rgba(50, 184, 198, 0.2);
+            color: var(--color-primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
         }
 
-        .tips-section {
-            margin-top: var(--space-3xl);
-            padding-top: var(--space-3xl);
-            border-top: 2px solid var(--border-color);
-        }
-
-        .tips-section h2 {
-            margin-bottom: var(--space-2xl);
-            font-size: var(--font-size-2xl);
-        }
-
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-2xl);
-        }
-
-        .tip-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: var(--space-2xl);
-            transition: all var(--transition-base);
-        }
-
-        .tip-card:hover {
-            border-color: var(--primary-color);
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.1);
-        }
-
-        .tip-card h3 {
-            margin-bottom: var(--space-md);
-            color: var(--primary-light);
-        }
-
-        .tip-card p {
-            color: var(--text-secondary);
-            margin: 0;
+        .no-commands {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--color-text-secondary);
         }
 
         @media (max-width: 768px) {
-            .commands-hero {
-                margin-top: 70px;
-                padding: 40px 0;
-            }
-
-            .commands-hero h1 {
-                font-size: var(--font-size-3xl);
-            }
-
             .commands-grid {
                 grid-template-columns: 1fr;
             }
 
             .filter-buttons {
-                gap: var(--space-sm);
+                gap: 8px;
             }
 
             .filter-btn {
-                padding: var(--space-sm) var(--space-md);
-                font-size: var(--font-size-sm);
-            }
-
-            .command-card {
-                padding: var(--space-lg);
-            }
-
-            .category-title {
-                font-size: var(--font-size-xl);
-                margin: var(--space-2xl) 0 var(--space-lg);
-            }
-
-            .tips-grid {
-                grid-template-columns: 1fr;
+                font-size: 13px;
+                padding: 8px 16px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="images/bot-logo.png" alt="Chordy Logo" class="logo-img">
-                <span>Chordy</span>
-            </div>
-            
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#features" class="nav-link">Features</a>
-                <a href="commands.html" class="nav-link active">Commands</a>
-                <a href="index.html#stats" class="nav-link">Stats</a>
-                <a href="index.html#faq" class="nav-link">FAQ</a>
-            </div>
-            
-            <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands" 
-               class="btn-invite" target="_blank">
-                Add to Discord
-            </a>
-            
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Commands Hero Section -->
-    <section class="commands-hero">
-        <div class="container">
-            <h1>Bot Commands</h1>
-            <p>Complete documentation of all available Chordy commands with examples</p>
-            
-            <div class="search-container">
-                <input type="text" id="command-search" class="command-search" placeholder="Search commands... (Ctrl+F)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
+    <!-- Header with Navigation -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main">
+            <div class="logo">🎵 Chordy</div>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="commands.html">Commands</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Category Filter -->
-    <section class="commands-section">
-        <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Commands</button>
-                <button class="filter-btn" data-filter="music">🎵 Music Info</button>
-                <button class="filter-btn" data-filter="charts">📊 Charts</button>
-                <button class="filter-btn" data-filter="search">🔍 Search</button>
-                <button class="filter-btn" data-filter="stats">📈 Statistics</button>
-                <button class="filter-btn" data-filter="utility">⚙️ Utility</button>
-            </div>
-
-            <!-- Music Information Commands -->
-            <div class="commands-category" data-category="music">
-                <h2 class="category-title">🎵 Music Information Commands</h2>
-                <div class="commands-grid">
-                    <!-- Command: !artist -->
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>!artist</h3>
-                            <span class="command-badge">Music Info</span>
-                        </div>
-                        <p class="command-description">Get detailed information about any artist including biography, popularity, and top tracks</p>
-                        
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">!artist &lt;artist_name&gt;</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">!artist The Weeknd</code>
-                                <code class="code-block">!artist Taylor Swift</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Artist name and profile image</li>
-                                    <li>Biography and follower count</li>
-                                    <li>Genres and popularity score</li>
-                                    <li>Top 5 most popular tracks</li>
-                                    <li>Spotify verification status</li>
-                                    <li>Direct link to Spotify profile</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Required Permissions</h4>
-                                <span class="permission-badge">Send Messages</span>
-                                <span class="permission-badge">Embed Links</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Command: !track -->
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>!track</h3>
-                            <span class="command-badge">Music Info</span>
-                        </div>
-                        <p class="command-description">Search for any track and get comprehensive details about it including audio features</p>
-                        
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">!track &lt;track_name&gt; [artist_name]</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">!track Blinding Lights</code>
-                                <code class="code-block">!track Levitating Dua Lipa</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Track name and artist</li>
-                                    <li>Album information</li>
-                                    <li>Release date and duration</li>
-                                    <li>Audio features (danceability, energy, valence)</li>
-                                    <li>Explicit content warning (if applicable)</li>
-                                    <li>Streaming links (Spotify, Apple Music, etc.)</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Required Permissions</h4>
-                                <span class="permission-badge">Send Messages</span>
-                                <span class="permission-badge">Embed Links</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Command: !album -->
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>!album</h3>
-                            <span class="command-badge">Music Info</span>
-                        </div>
-                        <p class="command-description">Get album details including full tracklist, release date, and artist information</p>
-                        
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">!album &lt;album_name&gt; [artist_name]</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">!album After Hours</code>
-                                <code class="code-block">!album folklore Taylor Swift</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Album artwork and title</li>
-                                    <li>Artist name and release date</li>
-                                    <li>Total tracks and total duration</li>
-                                    <li>Complete paginated tracklist</li>
-                                    <li>Genre and record label</li>
-                                    <li>Total streams on Spotify</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Required Permissions</h4>
-                                <span class="permission-badge">Send Messages</span>
-                                <span class="permission-badge">Embed Links</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Command: !lyrics -->
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>!lyrics</h3>
-                            <span class="command-badge">Music Info</span>
-                        </div>
-                        <p class="command-description">Fetch song lyrics for any track with proper artist attribution and formatting</p>
-                        
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">!lyrics &lt;track_name&gt; [artist_name]</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">!lyrics Bohemian Rhapsody</code>
-                                <code class="code-block">!lyrics Imagine John Lennon</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Features</h4>
-                                <ul class="info-list">
-                                    <li>Full lyrics in paginated format</li>
-                                    <li>Use reaction buttons (◀️ ▶️) to navigate</li>
-                                    <li>Direct link to full lyrics page</li>
-                                    <li>Artist and song credits</li>
-                                    <li>Maximum character limits for Discord</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Required Permissions</h4>
-                                <span class="permission-badge">Send Messages</span>
-                                <span class="permission-badge">Add Reactions</span>
-                                <span class="permission-badge">Manage Messages</span>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="commands-hero" aria-label="Commands page header">
+            <div class="container">
+                <h1>🎶 All Available Commands</h1>
+                <p>Complete list of all Chordy commands with detailed documentation and usage examples</p>
+                
+                <div class="search-container">
+                    <input type="text" class="command-search" placeholder="Search commands..." aria-label="Search commands">
                 </div>
             </div>
+        </section>
 
-            <!-- Chart Commands -->
-            <div class="commands-category" data-category="charts">
-                <h2 class="category-title">📊 Chart Commands</h2>
+        <!-- Commands Section -->
+        <section class="commands-section" aria-label="Music commands">
+            <div class="container">
+                <h2 class="category-title">🎵 Music Commands</h2>
+                
                 <div class="commands-grid">
-                    <!-- Command: !billboard -->
+                    <!-- Command: /addartist -->
                     <div class="command-card">
                         <div class="command-header">
-                            <h3>!billboard</h3>
-                            <span class="command-badge">Charts</span>
+                            <h3>/addartist</h3>
+                            <span class="command-badge">Music</span>
                         </div>
-                        <p class="command-description">View the current Billboard Hot 100 chart with top songs and their positions</p>
+                        <p class="command-description">Add an artist to your favorites collection</p>
                         
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
-                                <code class="code-block">!billboard [limit]</code>
+                                <code class="code-block">/addartist &lt;artist_name&gt;</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Examples</h4>
-                                <code class="code-block">!billboard</code>
-                                <code class="code-block">!billboard 20</code>
-                                <code class="code-block">!billboard top 50</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Parameters</h4>
-                                <ul class="info-list">
-                                    <li><strong>limit</strong> (optional): Show top N songs (default: 10, max: 100)</li>
-                                </ul>
+                                <code class="code-block">/addartist Taylor Swift</code>
+                                <code class="code-block">/addartist The Weeknd</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Chart position and ranking number</li>
-                                    <li>Song title and artist name</li>
-                                    <li>Weeks on chart</li>
-                                    <li>Peak position achieved</li>
-                                    <li>Last week's position (↑ or ↓)</li>
+                                    <li>Confirmation of artist added</li>
+                                    <li>Artist details and image</li>
+                                    <li>Total followers count</li>
+                                    <li>Add to favorites list</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: !trending -->
+                    <!-- Command: /artistinfo -->
                     <div class="command-card">
                         <div class="command-header">
-                            <h3>!trending</h3>
-                            <span class="command-badge">Charts</span>
+                            <h3>/artistinfo</h3>
+                            <span class="command-badge">Music Info</span>
                         </div>
-                        <p class="command-description">Get currently trending songs on Spotify globally or by region</p>
+                        <p class="command-description">Get detailed information about an artist</p>
                         
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
-                                <code class="code-block">!trending [region] [limit]</code>
+                                <code class="code-block">/artistinfo &lt;artist_name&gt;</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Examples</h4>
-                                <code class="code-block">!trending</code>
-                                <code class="code-block">!trending US 15</code>
-                                <code class="code-block">!trending IN 20</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Parameters</h4>
-                                <ul class="info-list">
-                                    <li><strong>region</strong> (optional): Country code (US, UK, IN, CA, AU, etc.) - default: Global</li>
-                                    <li><strong>limit</strong> (optional): Number of tracks (default: 10, max: 50)</li>
-                                </ul>
+                                <code class="code-block">/artistinfo Ed Sheeran</code>
+                                <code class="code-block">/artistinfo Billie Eilish</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Trending rank position</li>
-                                    <li>Track name and artists</li>
-                                    <li>Album name</li>
-                                    <li>Current popularity score</li>
-                                    <li>Release date</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Command: !topartists -->
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>!topartists</h3>
-                            <span class="command-badge">Charts</span>
-                        </div>
-                        <p class="command-description">View top trending artists on Spotify by region and timeframe</p>
-                        
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">!topartists [region] [limit] [timeframe]</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">!topartists</code>
-                                <code class="code-block">!topartists US 20</code>
-                                <code class="code-block">!topartists IN 10 monthly</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Parameters</h4>
-                                <ul class="info-list">
-                                    <li><strong>region</strong>: Country code (default: Global)</li>
-                                    <li><strong>limit</strong>: Number of artists (default: 10, max: 50)</li>
-                                    <li><strong>timeframe</strong>: daily, weekly, monthly (default: weekly)</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Artist rank position</li>
-                                    <li>Artist name and profile image</li>
+                                    <li>Artist biography</li>
+                                    <li>Genre and popularity</li>
                                     <li>Follower count</li>
-                                    <li>Primary genres</li>
-                                    <li>Popularity score</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Search Commands -->
-            <div class="commands-category" data-category="search">
-                <h2 class="category-title">🔍 Search & Discovery Commands</h2>
-                <div class="commands-grid">
-                    <!-- Command: !search -->
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>!search</h3>
-                            <span class="command-badge">Search</span>
-                        </div>
-                        <p class="command-description">Search for music with advanced filters and options for tracks, artists, or albums</p>
-                        
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">!search [type] &lt;query&gt; [filter]</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">!search track Blinding Lights</code>
-                                <code class="code-block">!search artist Taylor Swift</code>
-                                <code class="code-block">!search album folklore</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Parameters</h4>
-                                <ul class="info-list">
-                                    <li><strong>type</strong>: track, artist, album (default: track)</li>
-                                    <li><strong>query</strong>: What to search for</li>
-                                    <li><strong>filter</strong>: Optional genre or year filter</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Top search results matching query</li>
-                                    <li>Results paginated for easy navigation</li>
-                                    <li>Relevance ranking</li>
-                                    <li>Quick links to streaming services</li>
+                                    <li>Top tracks</li>
+                                    <li>Related artists</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: !genre -->
+                    <!-- Command: /ask-music -->
                     <div class="command-card">
                         <div class="command-header">
-                            <h3>!genre</h3>
-                            <span class="command-badge">Search</span>
+                            <h3>/ask-music</h3>
+                            <span class="command-badge">AI Music</span>
                         </div>
-                        <p class="command-description">Discover music by genre with personalized recommendations and curated playlists</p>
+                        <p class="command-description">Ask AI questions about music using natural language</p>
                         
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
-                                <code class="code-block">!genre &lt;genre_name&gt; [limit]</code>
+                                <code class="code-block">/ask-music &lt;your_question&gt;</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Examples</h4>
-                                <code class="code-block">!genre pop</code>
-                                <code class="code-block">!genre jazz 15</code>
-                                <code class="code-block">!genre indie 20</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Supported Genres</h4>
-                                <ul class="info-list">
-                                    <li>Pop, Rock, Hip-hop, R&B, Jazz</li>
-                                    <li>Electronic, Classical, Country</li>
-                                    <li>Latin, K-pop, Indie, Metal</li>
-                                    <li>Folk, Reggae, Blues, Soul</li>
-                                    <li>And 50+ more genres!</li>
-                                </ul>
+                                <code class="code-block">/ask-music What are the best rock albums?</code>
+                                <code class="code-block">/ask-music Who is the most streamed artist?</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Popular tracks in that genre</li>
-                                    <li>Trending artists</li>
+                                    <li>AI-powered response</li>
+                                    <li>Relevant music recommendations</li>
+                                    <li>Artist/album suggestions</li>
+                                    <li>Music facts and trivia</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command: /compare-artists -->
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/compare-artists</h3>
+                            <span class="command-badge">Analysis</span>
+                        </div>
+                        <p class="command-description">Compare two artists side by side</p>
+                        
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/compare-artists &lt;artist_1&gt; &lt;artist_2&gt;</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/compare-artists Drake Kendrick Lamar</code>
+                                <code class="code-block">/compare-artists Adele Beyoncé</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Genre comparison</li>
+                                    <li>Follower count comparison</li>
+                                    <li>Top tracks comparison</li>
+                                    <li>Popularity metrics</li>
+                                    <li>Similarities & differences</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command: /favorites -->
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/favorites</h3>
+                            <span class="command-badge">Profile</span>
+                        </div>
+                        <p class="command-description">View your saved favorite artists and tracks</p>
+                        
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/favorites</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/favorites</code>
+                                <code class="code-block">/favorites artists</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Your favorite artists list</li>
+                                    <li>Your favorite tracks list</li>
+                                    <li>Save date information</li>
+                                    <li>Remove option</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command: /genre -->
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/genre</h3>
+                            <span class="command-badge">Search</span>
+                        </div>
+                        <p class="command-description">Explore music by genre</p>
+                        
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/genre &lt;genre_name&gt;</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/genre rock</code>
+                                <code class="code-block">/genre hip-hop</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Top artists in genre</li>
+                                    <li>Popular tracks</li>
                                     <li>Genre description</li>
                                     <li>Related genres</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Statistics Commands -->
-            <div class="commands-category" data-category="stats">
-                <h2 class="category-title">📈 Statistics & Analytics Commands</h2>
-                <div class="commands-grid">
-                    <!-- Command: !mymusic -->
+                    <!-- Command: /guitarist-ranking -->
                     <div class="command-card">
                         <div class="command-header">
-                            <h3>!mymusic</h3>
-                            <span class="command-badge">Statistics</span>
+                            <h3>/guitarist-ranking</h3>
+                            <span class="command-badge">Ranking</span>
                         </div>
-                        <p class="command-description">View your personal music statistics and preferences on the bot</p>
+                        <p class="command-description">View top ranked guitarists</p>
                         
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
-                                <code class="code-block">!mymusic [timeframe]</code>
+                                <code class="code-block">/guitarist-ranking</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Examples</h4>
-                                <code class="code-block">!mymusic</code>
-                                <code class="code-block">!mymusic monthly</code>
-                                <code class="code-block">!mymusic yearly</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Information Shown</h4>
-                                <ul class="info-list">
-                                    <li>Top 5 tracks you searched for</li>
-                                    <li>Top 5 favorite artists</li>
-                                    <li>Total searches and queries</li>
-                                    <li>Most frequently used commands</li>
-                                    <li>Favorite genres based on history</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Privacy Note</h4>
-                                <ul class="info-list">
-                                    <li>Data is private by default</li>
-                                    <li>Only you can see your stats</li>
-                                    <li>Use !sharystats to make public</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Command: !compare -->
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>!compare</h3>
-                            <span class="command-badge">Statistics</span>
-                        </div>
-                        <p class="command-description">Compare music tastes with other server members and find common interests</p>
-                        
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">!compare [@user]</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">!compare @Alice</code>
-                                <code class="code-block">!compare @Bob</code>
+                                <code class="code-block">/guitarist-ranking</code>
+                                <code class="code-block">/guitarist-ranking top 10</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Shared favorite artists</li>
-                                    <li>Compatibility score (0-100%)</li>
-                                    <li>Similar genres you both like</li>
-                                    <li>Cross-recommendations based on both</li>
-                                    <li>Most similar tracks</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Privacy Note</h4>
-                                <ul class="info-list">
-                                    <li>Other user must opt-in to sharing</li>
-                                    <li>No private data shared</li>
-                                    <li>Only music preferences visible</li>
+                                    <li>Ranked guitarists list</li>
+                                    <li>Rankings by era</li>
+                                    <li>Genre-wise rankings</li>
+                                    <li>Details for each guitarist</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Utility Commands -->
-            <div class="commands-category" data-category="utility">
-                <h2 class="category-title">⚙️ Utility & Configuration Commands</h2>
-                <div class="commands-grid">
-                    <!-- Command: !help -->
+                    <!-- Command: /history -->
                     <div class="command-card">
                         <div class="command-header">
-                            <h3>!help</h3>
-                            <span class="command-badge">Utility</span>
+                            <h3>/history</h3>
+                            <span class="command-badge">Profile</span>
                         </div>
-                        <p class="command-description">Get help about a specific command or general bot information</p>
+                        <p class="command-description">View your recent command history</p>
                         
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
-                                <code class="code-block">!help [command_name]</code>
+                                <code class="code-block">/history</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Examples</h4>
-                                <code class="code-block">!help</code>
-                                <code class="code-block">!help artist</code>
-                                <code class="code-block">!help commands</code>
+                                <code class="code-block">/history</code>
+                                <code class="code-block">/history last 5</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>List of all available commands</li>
-                                    <li>Specific command syntax if provided</li>
-                                    <li>Usage examples</li>
-                                    <li>Bot status and statistics</li>
+                                    <li>Recent commands used</li>
+                                    <li>Timestamp information</li>
+                                    <li>Search results history</li>
+                                    <li>Clear history option</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: !setprefix -->
+                    <!-- Command: /new-releases -->
                     <div class="command-card">
                         <div class="command-header">
-                            <h3>!setprefix</h3>
-                            <span class="command-badge">Utility</span>
+                            <h3>/new-releases</h3>
+                            <span class="command-badge">Discover</span>
                         </div>
-                        <p class="command-description">Customize the command prefix for your server (server-specific)</p>
+                        <p class="command-description">Check the latest music releases</p>
                         
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
-                                <code class="code-block">!setprefix &lt;new_prefix&gt;</code>
+                                <code class="code-block">/new-releases</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Examples</h4>
-                                <code class="code-block">!setprefix ?</code>
-                                <code class="code-block">!setprefix m!</code>
-                                <code class="code-block">!setprefix --</code>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Requirements</h4>
-                                <span class="permission-badge">Admin Only</span>
-                                <span class="permission-badge">Manage Server</span>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Notes</h4>
-                                <ul class="info-list">
-                                    <li>Prefix can be 1-3 characters</li>
-                                    <li>Each server has its own prefix</li>
-                                    <li>Reset to ! with !setprefix !</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Command: !ping -->
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>!ping</h3>
-                            <span class="command-badge">Utility</span>
-                        </div>
-                        <p class="command-description">Check the bot's response time and current status</p>
-                        
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">!ping</code>
+                                <code class="code-block">/new-releases</code>
+                                <code class="code-block">/new-releases this week</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Bot latency in milliseconds</li>
-                                    <li>API response time</li>
-                                    <li>Discord connection status</li>
-                                    <li>Uptime percentage</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="detail-group">
-                                <h4>Response Times</h4>
-                                <ul class="info-list">
-                                    <li>0-100ms: Excellent</li>
-                                    <li>100-200ms: Good</li>
-                                    <li>200-500ms: Fair</li>
-                                    <li>500ms+: Slow</li>
+                                    <li>Latest album releases</li>
+                                    <li>New singles</li>
+                                    <li>Release dates</li>
+                                    <li>Artist information</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Command: !info -->
+                    <!-- Command: /profile -->
                     <div class="command-card">
                         <div class="command-header">
-                            <h3>!info</h3>
-                            <span class="command-badge">Utility</span>
+                            <h3>/profile</h3>
+                            <span class="command-badge">Profile</span>
                         </div>
-                        <p class="command-description">Get comprehensive information about Chordy and its capabilities</p>
+                        <p class="command-description">View your music profile and statistics</p>
                         
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
-                                <code class="code-block">!info</code>
+                                <code class="code-block">/profile</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/profile</code>
+                                <code class="code-block">/profile @username</code>
                             </div>
                             
                             <div class="detail-group">
                                 <h4>Information Returned</h4>
                                 <ul class="info-list">
-                                    <li>Bot version and release date</li>
-                                    <li>Current status (Online/Maintenance)</li>
-                                    <li>Uptime statistics</li>
-                                    <li>Total servers and users</li>
-                                    <li>Support and invite links</li>
-                                    <li>Feature highlights</li>
+                                    <li>Profile statistics</li>
+                                    <li>Favorite artists</li>
+                                    <li>Top tracks</li>
+                                    <li>Listening history</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command: /recommend-music -->
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/recommend-music</h3>
+                            <span class="command-badge">Discover</span>
+                        </div>
+                        <p class="command-description">Get personalized music recommendations</p>
+                        
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/recommend-music [preference]</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/recommend-music</code>
+                                <code class="code-block">/recommend-music rock</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Personalized recommendations</li>
+                                    <li>Artist suggestions</li>
+                                    <li>Track recommendations</li>
+                                    <li>Why recommended info</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command: /topsongs -->
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/topsongs</h3>
+                            <span class="command-badge">Discover</span>
+                        </div>
+                        <p class="command-description">View top songs globally or by artist</p>
+                        
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/topsongs [artist_name]</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/topsongs</code>
+                                <code class="code-block">/topsongs Justin Bieber</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Top songs ranking</li>
+                                    <li>Play count statistics</li>
+                                    <li>Release dates</li>
+                                    <li>Artist details</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command: /trending artist -->
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/trending artist</h3>
+                            <span class="command-badge">Trending</span>
+                        </div>
+                        <p class="command-description">Discover trending artists right now</p>
+                        
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/trending artist</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/trending artist</code>
+                                <code class="code-block">/trending artist this month</code>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Trending artists list</li>
+                                    <li>Current popularity rank</li>
+                                    <li>Growth statistics</li>
+                                    <li>Recent hits</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Tips and Best Practices -->
-            <section class="tips-section">
-                <h2>💡 Tips & Best Practices</h2>
-                
-                <div class="tips-grid">
-                    <div class="tip-card">
-                        <h3>✅ Use Exact Names</h3>
-                        <p>For best search results, use exact artist or track names. Partial names work but may return similar results instead of what you want.</p>
-                    </div>
-
-                    <div class="tip-card">
-                        <h3>🎯 Check Your Prefix</h3>
-                        <p>The default prefix is ! but server admins can customize it. Use !help to check your server's current command prefix.</p>
-                    </div>
-
-                    <div class="tip-card">
-                        <h3>⏱️ Rate Limits</h3>
-                        <p>Commands have reasonable rate limits to prevent abuse. If rate-limited, wait a few seconds before retrying the same command.</p>
-                    </div>
-
-                    <div class="tip-card">
-                        <h3>📄 Use Pagination</h3>
-                        <p>Long results use pagination. Use reaction buttons (◀️ ▶️) to navigate through pages of results in embeds.</p>
-                    </div>
-
-                    <div class="tip-card">
-                        <h3>🔒 Your Privacy Matters</h3>
-                        <p>Your music data is private by default. You control who sees your stats. Use !sharystats to make them public if desired.</p>
-                    </div>
-
-                    <div class="tip-card">
-                        <h3>❓ Need More Help?</h3>
-                        <p>Use !help for command information or join our support server. Check our documentation website for detailed guides.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Chordy</h3>
-                    <p>The ultimate Discord bot for music discovery and information</p>
+                    <p>Your ultimate Discord music companion for discovering, sharing, and enjoying music.</p>
                 </div>
-                
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="https://discord.gg/YOUR_SUPPORT_SERVER" target="_blank">Support Server</a></li>
-                    </ul>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="commands.html">Commands</a>
+                    <a href="about.html">About</a>
                 </div>
-                
                 <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/your-repo" target="_blank" title="GitHub">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com/your-account" target="_blank" title="Twitter">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
-                        </a>
-                    </div>
+                    <h3>Legal</h3>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 Chordy. All rights reserved. | Made with ❤️ for music lovers</p>
+                <p>&copy; 2025 Chordy. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/commands.js"></script>
 </body>
 </html>
