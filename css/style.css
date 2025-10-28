@@ -1828,9 +1828,8 @@ a:hover {
     outline: var(--focus-outline);
     outline-offset: 2px;
 }
-
 .value-card--highlight {
-    border: 2px solid var(#FF2C2C);
+    border: 2px solid #FF2C2C;
     background: linear-gradient(135deg, rgba(255,44,44,0.18) 0%, rgba(255,44,44,0.10) 100%);
     box-shadow: 0 4px 24px rgba(255,44,44, 0.10);
     transform: scale(1.045);
