@@ -1829,10 +1829,10 @@ a:hover {
     outline-offset: 2px;
 }
 .value-card--highlight {
-    border: 2px solid #FF2C2C;
-    background: linear-gradient(135deg, rgba(255,44,44,0.18) 0%, rgba(255,44,44,0.10) 100%);
-    box-shadow: 0 4px 24px rgba(255,44,44, 0.10);
-    transform: scale(1.045);
+    border: 2px solid #FF2C2C !important;
+    background: linear-gradient(135deg, rgba(255,44,44,0.18) 0%, rgba(255,44,44,0.10) 100%) !important;
+    box-shadow: 0 4px 24px rgba(255,44,44, 0.10) !important;
+    transform: scale(1.045)!important;
     z-index: 2;
     position: relative;
     animation: pulseHighlight 2s infinite alternate;
@@ -1840,17 +1840,17 @@ a:hover {
 .value-card--highlight:hover,
 .value-card--highlight:focus-within {
     border-color: #FF2C2C !important;
-    box-shadow: 0 8px 24px rgba(255,44,44,0.15), 0 4px 36px 6px rgba(255,44,44, 0.28);
+    box-shadow: 0 8px 24px rgba(255,44,44,0.15), 0 4px 36px 6px rgba(255,44,44, 0.28)!important;
 }
 @keyframes pulseHighlight {
     from {
-        box-shadow: 0 0 0 0 rgba(255,44,44, 0.23);
+        box-shadow: 0 0 0 0 rgba(255,44,44, 0.23)!important;
     }
     to {
-        box-shadow: 0 4px 36px 6px rgba(255,44,44, 0.33);
+        box-shadow: 0 4px 36px 6px rgba(255,44,44, 0.33)!important;
     }
 }
 .value-card--highlight .value-icon {
-    color: #FF0000;
-    text-shadow: 0 0 8px #FF2C2C;
+    color: #FF0000 !important;
+    text-shadow: 0 0 8px #FF2C2C !important;
 }
