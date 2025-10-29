@@ -1854,3 +1854,174 @@ a:hover {
     color: #FF0000 !important;
     text-shadow: 0 0 8px #FF2C2C !important;
 }
+.timeline {
+  position: relative;
+}
+.timeline::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 4px !important; 
+  height:11.215% !important; 
+  background: linear-gradient(
+      to bottom,
+      #32B8C6 70%,        /* Solid for most of the line */
+      rgba(50,184,198,0.0) 100% /* Fully transparent at the end */
+  ) !important;
+  z-index: 1 !important;
+}
+.team-usernames {
+  list-style: none;
+  padding: 0;
+  margin-top: 2em;
+  font-size: 1.05em;
+  color: #b0b6bd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.28em;
+  letter-spacing: 0.01em;
+}
+.team-usernames li {
+  padding: 0.18em 0.5em;
+  border-radius: 4px;
+  transition: background 0.18s, color 0.18s;
+}
+.team-usernames li:hover {
+  background: rgba(50,184,198, 0.10);
+  color: #32B8C6;
+  cursor: pointer;
+}
+.team-usernames {
+  max-height: 140px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team-usernames li {
+  padding: 0.18em 0.5em;
+  border-radius: 4px;
+}
+.team-usernames {
+  font-size: 0.99em !important;
+  line-height: 1.45 !important;
+}
+.user-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: center;
+  margin-top: 1em;
+  max-width: 95%;
+}
+.team-usernames {
+  scrollbar-width: none;
+  scrollbar-color: #32B8C6 #23272f;
+}
+.team-usernames::-webkit-scrollbar {
+  width: 6px;
+  background: #23272f;
+}
+.team-usernames::-webkit-scrollbar-thumb {
+  background: #32B8C6;
+  border-radius: 4px;
+}
+.team-usernames {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#viewMoreBtn {
+  margin-top: 0.21em;
+  background: linear-gradient(90deg, #23272f 60%, #22334c 100%);
+  color: #32B8C6;
+  border: none;
+  border-radius: 8px;
+  padding: 0.33em 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(32, 184, 198, 0.06);
+  transition: background 0.16s, color 0.16s, box-shadow 0.17s, transform 0.16s;
+  outline: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#viewMoreBtn:hover,
+#viewMoreBtn:focus {
+  background: #32B8C6;
+  color: #23272f;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 4px 14px rgba(50, 184, 198, 0.12);
+}
+.team-member {
+  background: #23272f !important;
+  border-radius: none !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10)!important;
+  padding: 1.5em 1.2em 1.2em 1.2em!important;
+  min-width: 250px !important;
+  max-width: 360px!important;
+  margin: 0 auto!important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.team-member-avatar {
+  width: 96px !important;
+  height: 96px !important;
+  margin-bottom: 1em !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 10px rgba(32,184,198,0.08) !important;
+  background: linear-gradient(135deg,#28323c 0%,#324054 100%) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.avatar-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  display: block !important;
+}
+
+.member-title {
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 1.26em !important;
+  margin-bottom: 0.15em !important;
+  margin-top: 0 !important;
+  letter-spacing: 0.01em !important;
+  text-align: center !important;
+}
+
+.member-role {
+  color: #32B8C6 !important;
+  font-size: 1.08em !important;
+  margin-bottom: 1em !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  text-align: center !important;
+}
+
+.member-desc {
+  color: #9ea4ab !important;
+  text-align: center !important;
+  font-size: 1.01em !important;
+  line-height: 1.55 !important;
+  margin-bottom: 0 !important;
+  padding-left: 0.3em !important;
+  padding-right: 0.3em !important;
+}
+
+
+
+

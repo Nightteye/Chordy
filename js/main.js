@@ -452,3 +452,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ============================================================================
+// 21. VIEW MORE BUTTON IN ABOUT PAGE
+// ============================================================================
+const btn = document.getElementById('viewMoreBtn');
+btn.onclick = function() {
+  document.querySelector('.more-users').style.display = 'block';
+  btn.style.display = 'none';
+};
