@@ -1828,7 +1828,7 @@ a:hover {
     outline: var(--focus-outline);
     outline-offset: 2px;
 }
-.value-card--highlight {
+/*.value-card--highlight {
     border: 2px solid #FF2C2C !important;
     background: linear-gradient(135deg, rgba(255,44,44,0.18) 0%, rgba(255,44,44,0.10) 100%) !important;
     box-shadow: 0 4px 24px rgba(255,44,44, 0.10) !important;
@@ -1836,11 +1836,11 @@ a:hover {
     z-index: 2;
     position: relative;
     animation: pulseHighlight 2s infinite alternate;
-}
+}*/
 .value-card--highlight:hover,
 .value-card--highlight:focus-within {
-    border-color: #FF2C2C !important;
-    box-shadow: 0 8px 24px rgba(255,44,44,0.15), 0 4px 36px 6px rgba(255,44,44, 0.28)!important;
+    border-color: #14e0f3 !important;
+    /*box-shadow: 0 8px 24px rgba(255,44,44,0.15), 0 4px 36px 6px rgba(255,44,44, 0.28)!important;*/
 }
 @keyframes pulseHighlight {
     from {
