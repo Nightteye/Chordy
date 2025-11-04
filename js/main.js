@@ -178,7 +178,7 @@ const startCounters = () => {
     const counters = [
         { element: document.getElementById('server-count'), target: 4, suffix: '+' },
         { element: document.getElementById('user-count'), target: 20, suffix: '+' },
-        { element: document.getElementById('command-count'), target: 16, suffix: '+' }
+        { element: document.getElementById('command-count'), target: 21, suffix: '' }
     ];
 
     counters.forEach(counter => {
