@@ -176,9 +176,9 @@ const startCounters = () => {
     countStarted = true;
 
     const counters = [
-        { element: document.getElementById('server-count'), target: 4, suffix: '+' },
-        { element: document.getElementById('user-count'), target: 20, suffix: '+' },
-        { element: document.getElementById('command-count'), target: 21, suffix: '' }
+        { element: document.getElementById('server-count'), target: 15, suffix: '+' },
+        { element: document.getElementById('user-count'), target: 400, suffix: '+' },
+        { element: document.getElementById('command-count'), target: 29, suffix: '' }
     ];
 
     counters.forEach(counter => {
