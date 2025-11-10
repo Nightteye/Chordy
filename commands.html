@@ -846,7 +846,7 @@
                         <div class="command-details">
                             <div class="detail-group">
                                 <h4>Usage</h4>
-                                <code class="code-block">/albuminfo &lt;album_name&lt; &lt;artist_name&lt;</code>
+                                <code class="code-block">/albuminfo &lt;album_name&gt; &lt;artist_name&gt;</code>
                             </div>
                             <div class="detail-group">
                                 <h4>Examples</h4>
@@ -892,6 +892,111 @@
                         </div>
                     </div>
 
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/concert-alerts</h3>
+                            <span class="command-badge">Discover</span>
+                        </div>
+                        <p class="command-description">Get latest Concert alerts around the world</p>
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/concert-alerts &lt;artist_name&gt;; &lt;notification_type&gt;</code>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/concert-alerts The Weekend dm</code>
+                                <code class="code-block">/concert-alerts Coldplay &lt;#channel&gt; </code>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Artist Name & Dates</li>
+                                    <li>Location</li>
+                                    <li>Tickets Link</li>
+                                    <li><strong>Every 12 Hours</strong></li>                 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/my-concert-alerts</h3>
+                            <span class="command-badge">Discover</span>
+                        </div>
+                        <p class="command-description">See all artists you're following for concert updates</p>
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/my-concert-alerts</code>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/my-concert-alerts</code>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Total Artists</li>
+                                    <li>Artist List</li>
+                                    <li>Notification Type</li>
+                                    <li><strong>Every 12 Hours</strong></li>                 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/remove-concert-alerts</h3>
+                            <span class="command-badge">Discover</span>
+                        </div>
+                        <p class="command-description">Unsubscribe from concert alerts</p>
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/remove-concert-alerts</code>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/remove-concert-alerts&lt;artist_name&gt;</code>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Unsubscribe Message</li>
+                                    <li>Artist Name</li>               
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <h3>/upcoming-concerts</h3>
+                            <span class="command-badge">Discover</span>
+                        </div>
+                        <p class="command-description">Get latest concert info of any artist</p>
+                        <div class="command-details">
+                            <div class="detail-group">
+                                <h4>Usage</h4>
+                                <code class="code-block">/upcoming-concerts &lt;artist_name&gt; &lt;country(optional)&gt;</code>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Examples</h4>
+                                <code class="code-block">/upcoming-concert Bryan Adams</code>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Information Returned</h4>
+                                <ul class="info-list">
+                                    <li>Unsubscribe Message</li>
+                                    <li>Artist Name</li>               
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
