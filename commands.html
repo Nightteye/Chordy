@@ -417,587 +417,806 @@
                 <h2 class="category-title">🎵 Music Commands</h2>
                 
                 <div class="commands-grid">
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/addartist</h3>
-                            <span class="command-badge">Music</span>
-                        </div>
-                        <p class="command-description">Add an artist to your favorites collection</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/addartist &lt;artist_name&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/addartist Taylor Swift</code>
-                                <code class="code-block">/addartist The Weeknd</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Confirmation of artist added</li>
-                                    <li>Artist details and image</li>
-                                    <li>Total followers count</li>
-                                    <li>Add to favorites list</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <!-- /add-liked Command -->
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/add-liked</h3>
+            <span class="command-badge">Library</span>
+        </div>
+        <p class="command-description">Add a song to your liked collection</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/add-liked &lt;song_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/add-liked Blinding Lights</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Song Added Confirmation</li>
+                    <li>Song Details</li>
+                    <li>Total Liked Songs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/artistinfo</h3>
-                            <span class="command-badge">Music Info</span>
-                        </div>
-                        <p class="command-description">Get detailed information about an artist</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/artistinfo &lt;artist_name&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/artistinfo Ed Sheeran</code>
-                                <code class="code-block">/artistinfo Billie Eilish</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Artist biography</li>
-                                    <li>Genre and popularity</li>
-                                    <li>Follower count</li>
-                                    <li>Top tracks</li>
-                                    <li>Related artists</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/addartist</h3>
+            <span class="command-badge">Music</span>
+        </div>
+        <p class="command-description">Add an artist to your favorites collection</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/addartist &lt;artist_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/addartist Coldplay</code>
+                <code class="code-block">/addartist The Beatles</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Confirmation of artist added</li>
+                    <li>Artist details and image</li>
+                    <li>Total followers count</li>
+                    <li>Add to favorites list</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/ask-music</h3>
-                            <span class="command-badge">AI Music</span>
-                        </div>
-                        <p class="command-description">Ask AI questions about music</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/ask-music &lt;your_question&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/ask-music What are best rock albums?</code>
-                                <code class="code-block">/ask-music Who is most streamed artist?</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>AI-powered response</li>
-                                    <li>Music recommendations</li>
-                                    <li>Artist suggestions</li>
-                                    <li>Music facts and trivia</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/albuminfo</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">View comprehensive album details</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/albuminfo &lt;album_name&gt; &lt;artist_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/albuminfo Parachutes Coldplay</code>
+                <code class="code-block">!albuminfo Abey Road The Beatles</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Album artwork</li>
+                    <li>Complete tracklist</li>
+                    <li>Release date</li>
+                    <li>Total duration</li>                   
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/compare-artists</h3>
-                            <span class="command-badge">Analysis</span>
-                        </div>
-                        <p class="command-description">Compare two artists side by side</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/compare-artists &lt;artist_1&gt; &lt;artist_2&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/compare-artists Drake Kendrick Lamar</code>
-                                <code class="code-block">/compare-artists Adele Beyoncé</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Genre comparison</li>
-                                    <li>Follower comparison</li>
-                                    <li>Top tracks comparison</li>
-                                    <li>Popularity metrics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/ artistinfo</h3>
+            <span class="command-badge">Music Info</span>
+        </div>
+        <p class="command-description">Get detailed information about an artist</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/artistinfo &lt;artist_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/artistinfo Coldplay</code>
+                <code class="code-block">/artistinfo The Beatles</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Artist biography</li>
+                    <li>Genre and popularity</li>
+                    <li>Follower count</li>
+                    <li>Top tracks</li>
+                    <li>Related artists</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/favorites</h3>
-                            <span class="command-badge">Profile</span>
-                        </div>
-                        <p class="command-description">View saved favorites</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/favorites</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/favorites</code>
-                                <code class="code-block">/favorites artists</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Favorite artists list</li>
-                                    <li>Favorite tracks list</li>
-                                    <li>Save date info</li>
-                                    <li>Remove option</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/ask-music</h3>
+            <span class="command-badge">AI Music</span>
+        </div>
+        <p class="command-description">Ask AI questions about music</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/ask-music &lt;your_question&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/ask-music What are best rock albums?</code>
+                <code class="code-block">/ask-music Who is most streamed artist?</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>AI-powered response</li>
+                    <li>Music recommendations</li>
+                    <li>Artist suggestions</li>
+                    <li>Music facts and trivia</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/genre</h3>
-                            <span class="command-badge">Search</span>
-                        </div>
-                        <p class="command-description">Explore music by genre</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/genre &lt;genre_name&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/genre rock</code>
-                                <code class="code-block">/genre hip-hop</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Top artists in genre</li>
-                                    <li>Popular tracks</li>
-                                    <li>Genre description</li>
-                                    <li>Related genres</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <!-- /battle Command -->
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/battle</h3>
+            <span class="command-badge">Games</span>
+        </div>
+        <p class="command-description">Start a music battle with another user</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/battle &lt;user&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/battle @username</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Battle Started</li>
+                    <li>Opponent Details</li>
+                    <li>Score Board</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/guitarist-ranking</h3>
-                            <span class="command-badge">Ranking</span>
-                        </div>
-                        <p class="command-description">View top ranked guitarists</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/guitarist-ranking</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/guitarist-ranking</code>
-                                <code class="code-block">/guitarist-ranking top 10</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Ranked guitarists list</li>
-                                    <li>Rankings by era</li>
-                                    <li>Genre rankings</li>
-                                    <li>Guitarist details</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/compare-artists</h3>
+            <span class="command-badge">Analysis</span>
+        </div>
+        <p class="command-description">Compare two artists side by side</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/compare-artists &lt;artist_1&gt; &lt;artist_2&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/compare-artists Maroon 5 Coldplay</code>
+                <code class="code-block">/compare-artists Radiohead The Beatles</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Genre comparison</li>
+                    <li>Follower comparison</li>
+                    <li>Top tracks comparison</li>
+                    <li>Popularity metrics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/history</h3>
-                            <span class="command-badge">Profile</span>
-                        </div>
-                        <p class="command-description">View command history</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/history</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/history</code>
-                                <code class="code-block">/history last 5</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Recent commands</li>
-                                    <li>Timestamps</li>
-                                    <li>Search history</li>
-                                    <li>Clear history</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/concert-alerts</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Get latest Concert alerts around the world</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/concert-alerts &lt;artist_name&gt;; &lt;notification_type&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/concert-alerts Coldplay dm</code>
+                <code class="code-block">/concert-alerts The Beatles &lt;#channel&gt; </code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Artist Name & Dates</li>
+                    <li>Location</li>
+                    <li>Tickets Link</li>
+                    <li><strong>Every 12 Hours</strong></li>                 
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/new-releases</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">Latest music releases</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/new-releases</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/new-releases</code>
-                                <code class="code-block">/new-releases this week</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Latest albums</li>
-                                    <li>New singles</li>
-                                    <li>Release dates</li>
-                                    <li>Artist info</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/daily-song</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Get personalized daily song picks</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/daily-song</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/daily-song</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Recommended track</li>
+                    <li>Artist details</li>
+                    <li>Album artwork</li>
+                    <li><strong>24-hour Cooldown</strong></li>                 
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/profile</h3>
-                            <span class="command-badge">Profile</span>
-                        </div>
-                        <p class="command-description">Your profile and stats</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/profile</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/profile</code>
-                                <code class="code-block">/profile @username</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Profile stats</li>
-                                    <li>Favorite artists</li>
-                                    <li>Top tracks</li>
-                                    <li>Listening history</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/favorites</h3>
+            <span class="command-badge">Profile</span>
+        </div>
+        <p class="command-description">View saved favorites</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/favorites</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/favorites</code>
+                <code class="code-block">/favorites artists</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Favorite artists list</li>
+                    <li>Favorite tracks list</li>
+                    <li>Save date info</li>
+                    <li>Remove option</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/recommend-music</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">Music recommendations</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/recommend-music [preference]</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/recommend-music</code>
-                                <code class="code-block">/recommend-music rock</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Recommendations</li>
-                                    <li>Artist suggestions</li>
-                                    <li>Track recommendations</li>
-                                    <li>Why recommended</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/follow</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Follow an artist for latest updates</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/follow &lt;artist_name&gt; &lt;notification_type&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/follow Coldplay DM</code>
+                <code class="code-block">/follow Coldplay &lt;#channel_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Follow Message</li>
+                    <li>Artist Name</li>  
+                    <li>Notification Type</li>             
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/topsongs</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">Top songs globally or by artist</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/topsongs [artist_name]</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/topsongs</code>
-                                <code class="code-block">/topsongs Justin Bieber</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Top songs ranking</li>
-                                    <li>Play count stats</li>
-                                    <li>Release dates</li>
-                                    <li>Artist details</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/genre</h3>
+            <span class="command-badge">Search</span>
+        </div>
+        <p class="command-description">Explore music by genre</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/genre &lt;genre_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/genre rock</code>
+                <code class="code-block">/genre hip-hop</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Top artists in genre</li>
+                    <li>Popular tracks</li>
+                    <li>Genre description</li>
+                    <li>Related genres</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/trending artist</h3>
-                            <span class="command-badge">Trending</span>
-                        </div>
-                        <p class="command-description">Trending artists right now</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/trending artist</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/trending artist</code>
-                                <code class="code-block">/trending artist this month</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Trending artists</li>
-                                    <li>Popularity rank</li>
-                                    <li>Growth stats</li>
-                                    <li>Recent hits</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/guitarist-ranking</h3>
+            <span class="command-badge">Ranking</span>
+        </div>
+        <p class="command-description">View top ranked guitarists</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/guitarist-ranking</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/guitarist-ranking</code>
+                <code class="code-block">/guitarist-ranking top 10</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Ranked guitarists list</li>
+                    <li>Rankings by era</li>
+                    <li>Genre rankings</li>
+                    <li>Guitarist details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/similar-artist</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">Discover artists similar to your favorites</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/similar-artist</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/similar-artist Arctic Monkeys</code>
-                                <code class="code-block">!similar-artist AC/DC</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Similar artists list</li>
-                                    <li>Genre matches</li>
-                                    <li>Popularity scores</li>
-                                    <li>Artist profiles</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <!-- /help Command -->
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/help</h3>
+            <span class="command-badge">Info</span>
+        </div>
+        <p class="command-description">Get help and information about available commands</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/help</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/help</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>All Available Commands</li>
+                    <li>Command Descriptions</li>
+                    <li>Usage Examples</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/lyrics</h3>
-                            <span class="command-badge">Music</span>
-                        </div>
-                        <p class="command-description">Get full lyrics for any song instantly</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/lyrics &lt;song_name&gt; &lt;artist_name&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code>/lyrics Blinding Lights The Weekend</code>
-                                <code>!lyrics Blinding Lights The Weekend</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Complete lyrics</li>
-                                    <li>Track details</li>
-                                    <li>Album artwork</li>
-                                    <li>Artist information</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/history</h3>
+            <span class="command-badge">Profile</span>
+        </div>
+        <p class="command-description">View command history</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/history</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/history</code>
+                <code class="code-block">/history last 5</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Recent commands</li>
+                    <li>Timestamps</li>
+                    <li>Search history</li>
+                    <li>Clear history</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/albuminfo</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">View comprehensive album details</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/albuminfo &lt;album_name&gt; &lt;artist_name&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/albuminfo Parachutes Coldplay</code>
-                                <code class="code-block">!albuminfo Back in Black AC/DC</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Album artwork</li>
-                                    <li>Complete tracklist</li>
-                                    <li>Release date</li>
-                                    <li>Total duration</li>                   
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/lyrics</h3>
+            <span class="command-badge">Music</span>
+        </div>
+        <p class="command-description">Get full lyrics for any song instantly</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/lyrics &lt;song_name&gt; &lt;artist_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code>/lyrics Yellow Coldplay</code>
+                <code>/lyrics Hey Jude The Beatles</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Complete lyrics</li>
+                    <li>Track details</li>
+                    <li>Album artwork</li>
+                    <li>Artist information</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                        <div class="command-card">
-                        <div class="command-header">
-                            <h3>/daily-song</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">Get personalized daily song picks</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/daily-song</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/daily-song</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Recommended track</li>
-                                    <li>Artist details</li>
-                                    <li>Album artwork</li>
-                                    <li><strong>24-hour Cooldown</strong></li>                 
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/my-concert-alerts</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">See all artists you're following for concert updates</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/my-concert-alerts</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/my-concert-alerts</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Total Artists</li>
+                    <li>Artist List</li>
+                    <li>Notification Type</li>
+                    <li><strong>Every 12 Hours</strong></li>                 
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/concert-alerts</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">Get latest Concert alerts around the world</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/concert-alerts &lt;artist_name&gt;; &lt;notification_type&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/concert-alerts The Weekend dm</code>
-                                <code class="code-block">/concert-alerts Coldplay &lt;#channel&gt; </code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Artist Name & Dates</li>
-                                    <li>Location</li>
-                                    <li>Tickets Link</li>
-                                    <li><strong>Every 12 Hours</strong></li>                 
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/myartist</h3>
+            <span class="command-badge">Profile</span>
+        </div>
+        <p class="command-description">See all artist you are following</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/my-artist</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/my-artist</code>
+                
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Your Artists</li>
+                    <li>Total Artist</li>  
+                    <li>Artist List</li>             
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/my-concert-alerts</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">See all artists you're following for concert updates</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/my-concert-alerts</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/my-concert-alerts</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Total Artists</li>
-                                    <li>Artist List</li>
-                                    <li>Notification Type</li>
-                                    <li><strong>Every 12 Hours</strong></li>                 
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/new-releases</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Latest music releases</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/new-releases</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/new-releases</code>
+                
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Latest albums</li>
+                    <li>New singles</li>
+                    <li>Release dates</li>
+                    <li>Artist info</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/remove-concert-alerts</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">Unsubscribe from concert alerts</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/remove-concert-alerts</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/remove-concert-alerts&lt;artist_name&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Unsubscribe Message</li>
-                                    <li>Artist Name</li>               
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/profile</h3>
+            <span class="command-badge">Profile</span>
+        </div>
+        <p class="command-description">Your profile and stats</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/profile</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/profile</code>
+                <code class="code-block">/profile @username</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Profile stats</li>
+                    <li>Favorite artists</li>
+                    <li>Top tracks</li>
+                    <li>Listening history</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="command-card">
-                        <div class="command-header">
-                            <h3>/upcoming-concerts</h3>
-                            <span class="command-badge">Discover</span>
-                        </div>
-                        <p class="command-description">Get latest concert info of any artist</p>
-                        <div class="command-details">
-                            <div class="detail-group">
-                                <h4>Usage</h4>
-                                <code class="code-block">/upcoming-concerts &lt;artist_name&gt; &lt;country(optional)&gt;</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Examples</h4>
-                                <code class="code-block">/upcoming-concert Bryan Adams</code>
-                            </div>
-                            <div class="detail-group">
-                                <h4>Information Returned</h4>
-                                <ul class="info-list">
-                                    <li>Unsubscribe Message</li>
-                                    <li>Artist Name</li>               
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/recommend-music</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Music recommendations</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/recommend-music [preference]</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/recommend-music</code>
+                <code class="code-block">/recommend-music rock</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Recommendations</li>
+                    <li>Artist suggestions</li>
+                    <li>Track recommendations</li>
+                    <li>Why recommended</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/remove-concert-alerts</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Unsubscribe from concert alerts</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/remove-concert-alerts</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/remove-concert-alerts Coldplay</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Unsubscribe Message</li>
+                    <li>Artist Name</li>               
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- /remove-liked Command -->
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/remove-liked</h3>
+            <span class="command-badge">Library</span>
+        </div>
+        <p class="command-description">Remove a song from your liked collection</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/remove-liked &lt;song_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/remove-liked Blinding Lights</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Song Removed Confirmation</li>
+                    <li>Remaining Liked Songs</li>
+                    <li>Updated Collection</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/similar-artist</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Discover artists similar to your favorites</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/similar-artist</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/similar-artist Coldplay</code>
+                <code class="code-block">!similar-artist The Beatles</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Similar artists list</li>
+                    <li>Genre matches</li>
+                    <li>Popularity scores</li>
+                    <li>Artist profiles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/topsongs</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Top songs globally or by artist</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/topsongs [artist_name]</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/topsongs Coldplay</code>
+                <code class="code-block">/topsongs The Beatles</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Top songs ranking</li>
+                    <li>Play count stats</li>
+                    <li>Release dates</li>
+                    <li>Artist details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/trending artist</h3>
+            <span class="command-badge">Trending</span>
+        </div>
+        <p class="command-description">Trending artists right now</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/trending artist</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/trending artist</code>
+                <
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Trending artists</li>
+                    <li>Popularity rank</li>
+                    <li>Growth stats</li>
+                    <li>Recent hits</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- /unfollow Command -->
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/unfollow</h3>
+            <span class="command-badge">Profile</span>
+        </div>
+        <p class="command-description">Unfollow an artist from your collection</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/unfollow &lt;artist_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/unfollow The Weeknd</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Artist Unfollowed</li>
+                    <li>Remaining Following Count</li>
+                    <li>Updated Artists List</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/upcoming-concerts</h3>
+            <span class="command-badge">Discover</span>
+        </div>
+        <p class="command-description">Get latest concert info of any artist</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/upcoming-concerts &lt;artist_name&gt;</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/upcoming-concert The Beatles</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Unsubscribe Message</li>
+                    <li>Artist Name</li>               
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- /view-liked Command -->
+    <div class="command-card">
+        <div class="command-header">
+            <h3>/view-liked</h3>
+            <span class="command-badge">Library</span>
+        </div>
+        <p class="command-description">View all songs in your liked collection</p>
+        <div class="command-details">
+            <div class="detail-group">
+                <h4>Usage</h4>
+                <code class="code-block">/view-liked</code>
+            </div>
+            <div class="detail-group">
+                <h4>Examples</h4>
+                <code class="code-block">/view-liked</code>
+            </div>
+            <div class="detail-group">
+                <h4>Information Returned</h4>
+                <ul class="info-list">
+                    <li>Complete Liked Songs List</li>
+                    <li>Total Count</li>
+                    <li>Song Details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
                 </div>
             </div>
         </section>
